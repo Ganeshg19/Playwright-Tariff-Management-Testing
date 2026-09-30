@@ -1,0 +1,76 @@
+╔══════════════════════════════════════════════════════════════╗
+║      TARIFF MANAGEMENT - PLAYWRIGHT AUTOMATION               ║
+║              QUICK START GUIDE                               ║
+╚══════════════════════════════════════════════════════════════╝
+
+📦 INSTALLATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Install dependencies:
+   pip install -r requirements.txt
+   playwright install chromium
+
+🚀 RUN TESTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   pytest --headed --slowmo=1000 -v
+
+📊 WHAT'S INCLUDED
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ 24 Test Cases (Login, Navigation, 20 Bug Validations)
+✅ Headed Mode (Watch tests run)
+✅ Slow Motion (1 second delay)
+✅ Auto Screenshots
+✅ HTML Reports
+✅ Bug Evidence Collection
+
+📁 IMPORTANT FILES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+README.md                  → Project overview
+PROJECT_SUMMARY.md         → Complete project summary
+docs/EXECUTION_GUIDE.md    → Detailed how-to run tests
+docs/BUG_REPORT.md         → All 20 bugs documented
+docs/TEST_CASES.md         → Test specifications
+
+🎯 TEST STRUCTURE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+tests/test_01_login.py           → Login tests (2)
+tests/test_02_tariff_management.py → Core tests (5)
+tests/test_03_bugs.py            → Bugs 1-9 (6)
+tests/test_04_more_bugs.py       → Bugs 10-20 (11)
+
+📸 RESULTS LOCATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+assets/screenshots/    → Test execution screenshots
+assets/bugs/          → Bug evidence screenshots
+reports/report.html   → HTML test report
+
+🐛 BUGS FOUND: 20
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+High Priority:    2 bugs
+Medium Priority: 10 bugs
+Low Priority:     8 bugs
+
+🎬 EXECUTION TIME
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Full Suite: ~15-20 minutes (with slow motion)
+Login Only: ~2 minutes
+Single Bug: ~30 seconds
+
+💡 TIPS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Sit back and watch - tests run slowly for visibility
+• Screenshots are auto-captured at each step
+• All bugs have visual evidence
+• Check HTML report after execution
+• Review bug screenshots in assets/bugs/
+
+🎯 CREDENTIALS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+URL: https://test-warsoft-v4.hummingbirdindia.com/property/tariff
+Email: anu@hummingbirdindia.com
+Password: Anu@1234
+
+✅ STATUS: READY TO USE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Everything is set up and ready to run!
+
+🎉 ENJOY TESTING! 🚀

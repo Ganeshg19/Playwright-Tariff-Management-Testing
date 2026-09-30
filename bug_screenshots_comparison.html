@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug Screenshots - Before & After Annotation</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .comparison-grid {
+            display: grid;
+            gap: 30px;
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+        .bug-comparison {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+        .bug-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #d32f2f;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #d32f2f;
+        }
+        .images-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .image-section {
+            text-align: center;
+        }
+        .image-label {
+            font-weight: bold;
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 5px;
+        }
+        .original-label {
+            background: #ff9800;
+            color: white;
+        }
+        .annotated-label {
+            background: #4caf50;
+            color: white;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            cursor: zoom-in;
+        }
+        img:hover {
+            transform: scale(1.02);
+            transition: transform 0.3s;
+        }
+        .stats {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .stats span {
+            display: inline-block;
+            margin: 0 20px;
+            font-size: 1.2em;
+        }
+        .legend {
+            background: #fff3cd;
+            padding: 15px;
+            border-left: 4px solid #ff9800;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+        .legend h3 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+        .legend ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+        .legend li {
+            margin: 5px 0;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            cursor: zoom-out;
+        }
+        .modal img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 95%;
+            max-height: 95%;
+            cursor: zoom-out;
+        }
+    </style>
+    <script>
+        function openModal(imgSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modal.style.display = 'block';
+            modalImg.src = imgSrc;
+        }
+        
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <h1>🐛 Bug Screenshots - Original vs Annotated</h1>
+    
+    <div class="stats">
+        <span>📸 Total Bugs: <strong id="bugCount">0</strong></span>
+        <span>✏️ Annotated: <strong id="annotatedCount">0</strong></span>
+    </div>
+    
+    <div class="legend">
+        <h3>📝 Annotation Legend</h3>
+        <ul>
+            <li>🔴 <strong>Red Rectangle/Circle:</strong> Main bug location</li>
+            <li>🟠 <strong>Orange:</strong> Secondary issues or warnings</li>
+            <li>🟢 <strong>Green Text:</strong> Expected/correct behavior</li>
+            <li>➡️ <strong>Arrows:</strong> Point to specific problem areas</li>
+            <li>📋 <strong>Top Banner:</strong> Bug ID and description</li>
+        </ul>
+    </div>
+    
+    <div class="comparison-grid" id="comparisonGrid">
+        <!-- Bug comparisons will be inserted here -->
+    </div>
+    
+    <!-- Modal for full-size image view -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <img id="modalImage" src="">
+    </div>
+    
+    <script>
+        // Bug data will be inserted here
+        const bugData = [
+
+            {
+                id: "BUG_01",
+                name: "Bug 01 Checkbox Not Visible",
+                original: "../assets/bugs/bug_01_checkbox_not_visible_20260929_162950.png",
+                annotated: "../assets/bugs_annotated/bug_01_checkbox_not_visible_20260929_162950_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_01",
+                name: "Bug 01 Checkbox Not Visible",
+                original: "../assets/bugs/bug_01_checkbox_not_visible_20260929_163050.png",
+                annotated: "../assets/bugs_annotated/bug_01_checkbox_not_visible_20260929_163050_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_01",
+                name: "Bug 01 Checkbox Not Visible",
+                original: "../assets/bugs/bug_01_checkbox_not_visible_20260929_164329.png",
+                annotated: "../assets/bugs_annotated/bug_01_checkbox_not_visible_20260929_164329_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_02",
+                name: "Bug 02 Filter Initial Space",
+                original: "../assets/bugs/bug_02_filter_initial_space_20260929_161920.png",
+                annotated: "../assets/bugs_annotated/bug_02_filter_initial_space_20260929_161920_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_02",
+                name: "Bug 02 Filter Initial Space",
+                original: "../assets/bugs/bug_02_filter_initial_space_20260929_162954.png",
+                annotated: "../assets/bugs_annotated/bug_02_filter_initial_space_20260929_162954_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_02",
+                name: "Bug 02 Filter Initial Space",
+                original: "../assets/bugs/bug_02_filter_initial_space_20260929_163054.png",
+                annotated: "../assets/bugs_annotated/bug_02_filter_initial_space_20260929_163054_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_02",
+                name: "Bug 02 Filter Initial Space",
+                original: "../assets/bugs/bug_02_filter_initial_space_20260929_164333.png",
+                annotated: "../assets/bugs_annotated/bug_02_filter_initial_space_20260929_164333_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_03",
+                name: "Bug 03 Table Header Caps",
+                original: "../assets/bugs/bug_03_table_header_caps_20260929_161520.png",
+                annotated: "../assets/bugs_annotated/bug_03_table_header_caps_20260929_161520_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_03",
+                name: "Bug 03 Table Header Caps",
+                original: "../assets/bugs/bug_03_table_header_caps_20260929_161923.png",
+                annotated: "../assets/bugs_annotated/bug_03_table_header_caps_20260929_161923_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_03",
+                name: "Bug 03 Table Header Caps",
+                original: "../assets/bugs/bug_03_table_header_caps_20260929_162956.png",
+                annotated: "../assets/bugs_annotated/bug_03_table_header_caps_20260929_162956_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_03",
+                name: "Bug 03 Table Header Caps",
+                original: "../assets/bugs/bug_03_table_header_caps_20260929_163055.png",
+                annotated: "../assets/bugs_annotated/bug_03_table_header_caps_20260929_163055_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_03",
+                name: "Bug 03 Table Header Caps",
+                original: "../assets/bugs/bug_03_table_header_caps_20260929_164334.png",
+                annotated: "../assets/bugs_annotated/bug_03_table_header_caps_20260929_164334_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_04",
+                name: "Bug 04 Table Heading Mismatch",
+                original: "../assets/bugs/bug_04_table_heading_mismatch_20260929_161522.png",
+                annotated: "../assets/bugs_annotated/bug_04_table_heading_mismatch_20260929_161522_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_04",
+                name: "Bug 04 Table Heading Mismatch",
+                original: "../assets/bugs/bug_04_table_heading_mismatch_20260929_161927.png",
+                annotated: "../assets/bugs_annotated/bug_04_table_heading_mismatch_20260929_161927_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_04",
+                name: "Bug 04 Table Heading Mismatch",
+                original: "../assets/bugs/bug_04_table_heading_mismatch_20260929_163056.png",
+                annotated: "../assets/bugs_annotated/bug_04_table_heading_mismatch_20260929_163056_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_04",
+                name: "Bug 04 Table Heading Mismatch",
+                original: "../assets/bugs/bug_04_table_heading_mismatch_20260929_164335.png",
+                annotated: "../assets/bugs_annotated/bug_04_table_heading_mismatch_20260929_164335_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_05",
+                name: "Bug 05 Tooltip Missing 20260929",
+                original: "../assets/bugs/bug_05_tooltip_missing_20260929_161525.png",
+                annotated: "../assets/bugs_annotated/bug_05_tooltip_missing_20260929_161525_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_05",
+                name: "Bug 05 Tooltip Missing 20260929",
+                original: "../assets/bugs/bug_05_tooltip_missing_20260929_161930.png",
+                annotated: "../assets/bugs_annotated/bug_05_tooltip_missing_20260929_161930_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_05",
+                name: "Bug 05 Tooltip Missing 20260929",
+                original: "../assets/bugs/bug_05_tooltip_missing_20260929_163057.png",
+                annotated: "../assets/bugs_annotated/bug_05_tooltip_missing_20260929_163057_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_05",
+                name: "Bug 05 Tooltip Missing 20260929",
+                original: "../assets/bugs/bug_05_tooltip_missing_20260929_164336.png",
+                annotated: "../assets/bugs_annotated/bug_05_tooltip_missing_20260929_164336_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_06",
+                name: "Bug 06 Design Background 20260929",
+                original: "../assets/bugs/bug_06_design_background_20260929_161936.png",
+                annotated: "../assets/bugs_annotated/bug_06_design_background_20260929_161936_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_06",
+                name: "Bug 06 Design Background 20260929",
+                original: "../assets/bugs/bug_06_design_background_20260929_163101.png",
+                annotated: "../assets/bugs_annotated/bug_06_design_background_20260929_163101_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_06",
+                name: "Bug 06 Design Background 20260929",
+                original: "../assets/bugs/bug_06_design_background_20260929_164340.png",
+                annotated: "../assets/bugs_annotated/bug_06_design_background_20260929_164340_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_07",
+                name: "Bug 07 Error Message 20260929",
+                original: "../assets/bugs/bug_07_error_message_20260929_163108.png",
+                annotated: "../assets/bugs_annotated/bug_07_error_message_20260929_163108_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_07",
+                name: "Bug 07 Error Message 20260929",
+                original: "../assets/bugs/bug_07_error_message_20260929_164347.png",
+                annotated: "../assets/bugs_annotated/bug_07_error_message_20260929_164347_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_08",
+                name: "Bug 08 Date Picker Alignment",
+                original: "../assets/bugs/bug_08_date_picker_alignment_20260929_162013.png",
+                annotated: "../assets/bugs_annotated/bug_08_date_picker_alignment_20260929_162013_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_08",
+                name: "Bug 08 Date Picker Alignment",
+                original: "../assets/bugs/bug_08_date_picker_alignment_20260929_163109.png",
+                annotated: "../assets/bugs_annotated/bug_08_date_picker_alignment_20260929_163109_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_08",
+                name: "Bug 08 Date Picker Alignment",
+                original: "../assets/bugs/bug_08_date_picker_alignment_20260929_164348.png",
+                annotated: "../assets/bugs_annotated/bug_08_date_picker_alignment_20260929_164348_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_09",
+                name: "Bug 09 Room Image Fit",
+                original: "../assets/bugs/bug_09_room_image_fit_20260929_162016.png",
+                annotated: "../assets/bugs_annotated/bug_09_room_image_fit_20260929_162016_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_09",
+                name: "Bug 09 Room Image Fit",
+                original: "../assets/bugs/bug_09_room_image_fit_20260929_163110.png",
+                annotated: "../assets/bugs_annotated/bug_09_room_image_fit_20260929_163110_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_09",
+                name: "Bug 09 Room Image Fit",
+                original: "../assets/bugs/bug_09_room_image_fit_20260929_164350.png",
+                annotated: "../assets/bugs_annotated/bug_09_room_image_fit_20260929_164350_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_10",
+                name: "Bug 10 Alignment Issue 20260929",
+                original: "../assets/bugs/bug_10_alignment_issue_20260929_162019.png",
+                annotated: "../assets/bugs_annotated/bug_10_alignment_issue_20260929_162019_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_10",
+                name: "Bug 10 Alignment Issue 20260929",
+                original: "../assets/bugs/bug_10_alignment_issue_20260929_163111.png",
+                annotated: "../assets/bugs_annotated/bug_10_alignment_issue_20260929_163111_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_10",
+                name: "Bug 10 Alignment Issue 20260929",
+                original: "../assets/bugs/bug_10_alignment_issue_20260929_164351.png",
+                annotated: "../assets/bugs_annotated/bug_10_alignment_issue_20260929_164351_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_11",
+                name: "Bug 11 Tooltip Room Charge",
+                original: "../assets/bugs/bug_11_tooltip_room_charge_20260929_162023.png",
+                annotated: "../assets/bugs_annotated/bug_11_tooltip_room_charge_20260929_162023_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_11",
+                name: "Bug 11 Tooltip Room Charge",
+                original: "../assets/bugs/bug_11_tooltip_room_charge_20260929_163112.png",
+                annotated: "../assets/bugs_annotated/bug_11_tooltip_room_charge_20260929_163112_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_11",
+                name: "Bug 11 Tooltip Room Charge",
+                original: "../assets/bugs/bug_11_tooltip_room_charge_20260929_164352.png",
+                annotated: "../assets/bugs_annotated/bug_11_tooltip_room_charge_20260929_164352_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_12",
+                name: "Bug 12 To Date Wrong",
+                original: "../assets/bugs/bug_12_to_date_wrong_20260929_162026.png",
+                annotated: "../assets/bugs_annotated/bug_12_to_date_wrong_20260929_162026_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_12",
+                name: "Bug 12 To Date Wrong",
+                original: "../assets/bugs/bug_12_to_date_wrong_20260929_163113.png",
+                annotated: "../assets/bugs_annotated/bug_12_to_date_wrong_20260929_163113_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_12",
+                name: "Bug 12 To Date Wrong",
+                original: "../assets/bugs/bug_12_to_date_wrong_20260929_164353.png",
+                annotated: "../assets/bugs_annotated/bug_12_to_date_wrong_20260929_164353_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_13",
+                name: "Bug 13 Tariff Length 20260929",
+                original: "../assets/bugs/bug_13_tariff_length_20260929_162029.png",
+                annotated: "../assets/bugs_annotated/bug_13_tariff_length_20260929_162029_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_13",
+                name: "Bug 13 Tariff Length 20260929",
+                original: "../assets/bugs/bug_13_tariff_length_20260929_163114.png",
+                annotated: "../assets/bugs_annotated/bug_13_tariff_length_20260929_163114_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_13",
+                name: "Bug 13 Tariff Length 20260929",
+                original: "../assets/bugs/bug_13_tariff_length_20260929_164354.png",
+                annotated: "../assets/bugs_annotated/bug_13_tariff_length_20260929_164354_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_14",
+                name: "Bug 14 Pagination 20260929 162032",
+                original: "../assets/bugs/bug_14_pagination_20260929_162032.png",
+                annotated: "../assets/bugs_annotated/bug_14_pagination_20260929_162032_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_14",
+                name: "Bug 14 Pagination 20260929 163116",
+                original: "../assets/bugs/bug_14_pagination_20260929_163116.png",
+                annotated: "../assets/bugs_annotated/bug_14_pagination_20260929_163116_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_14",
+                name: "Bug 14 Pagination 20260929 164355",
+                original: "../assets/bugs/bug_14_pagination_20260929_164355.png",
+                annotated: "../assets/bugs_annotated/bug_14_pagination_20260929_164355_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_15",
+                name: "Bug 15 Tac Percentage Dot",
+                original: "../assets/bugs/bug_15_tac_percentage_dot_20260929_162035.png",
+                annotated: "../assets/bugs_annotated/bug_15_tac_percentage_dot_20260929_162035_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_15",
+                name: "Bug 15 Tac Percentage Dot",
+                original: "../assets/bugs/bug_15_tac_percentage_dot_20260929_163117.png",
+                annotated: "../assets/bugs_annotated/bug_15_tac_percentage_dot_20260929_163117_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_15",
+                name: "Bug 15 Tac Percentage Dot",
+                original: "../assets/bugs/bug_15_tac_percentage_dot_20260929_164356.png",
+                annotated: "../assets/bugs_annotated/bug_15_tac_percentage_dot_20260929_164356_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_16",
+                name: "Bug 16 Date Manual Edit",
+                original: "../assets/bugs/bug_16_date_manual_edit_20260929_162039.png",
+                annotated: "../assets/bugs_annotated/bug_16_date_manual_edit_20260929_162039_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_16",
+                name: "Bug 16 Date Manual Edit",
+                original: "../assets/bugs/bug_16_date_manual_edit_20260929_163118.png",
+                annotated: "../assets/bugs_annotated/bug_16_date_manual_edit_20260929_163118_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_16",
+                name: "Bug 16 Date Manual Edit",
+                original: "../assets/bugs/bug_16_date_manual_edit_20260929_164357.png",
+                annotated: "../assets/bugs_annotated/bug_16_date_manual_edit_20260929_164357_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_17",
+                name: "Bug 17 Filter Not Cleared",
+                original: "../assets/bugs/bug_17_filter_not_cleared_20260929_162042.png",
+                annotated: "../assets/bugs_annotated/bug_17_filter_not_cleared_20260929_162042_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_17",
+                name: "Bug 17 Filter Not Cleared",
+                original: "../assets/bugs/bug_17_filter_not_cleared_20260929_163119.png",
+                annotated: "../assets/bugs_annotated/bug_17_filter_not_cleared_20260929_163119_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_17",
+                name: "Bug 17 Filter Not Cleared",
+                original: "../assets/bugs/bug_17_filter_not_cleared_20260929_164358.png",
+                annotated: "../assets/bugs_annotated/bug_17_filter_not_cleared_20260929_164358_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_18",
+                name: "Bug 18 Design Overlaps 20260929",
+                original: "../assets/bugs/bug_18_design_overlaps_20260929_162045.png",
+                annotated: "../assets/bugs_annotated/bug_18_design_overlaps_20260929_162045_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_18",
+                name: "Bug 18 Design Overlaps 20260929",
+                original: "../assets/bugs/bug_18_design_overlaps_20260929_163120.png",
+                annotated: "../assets/bugs_annotated/bug_18_design_overlaps_20260929_163120_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_18",
+                name: "Bug 18 Design Overlaps 20260929",
+                original: "../assets/bugs/bug_18_design_overlaps_20260929_164359.png",
+                annotated: "../assets/bugs_annotated/bug_18_design_overlaps_20260929_164359_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_19",
+                name: "Bug 19 Firefox Design 20260929",
+                original: "../assets/bugs/bug_19_firefox_design_20260929_162048.png",
+                annotated: "../assets/bugs_annotated/bug_19_firefox_design_20260929_162048_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_19",
+                name: "Bug 19 Firefox Design 20260929",
+                original: "../assets/bugs/bug_19_firefox_design_20260929_163121.png",
+                annotated: "../assets/bugs_annotated/bug_19_firefox_design_20260929_163121_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_19",
+                name: "Bug 19 Firefox Design 20260929",
+                original: "../assets/bugs/bug_19_firefox_design_20260929_164400.png",
+                annotated: "../assets/bugs_annotated/bug_19_firefox_design_20260929_164400_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_20",
+                name: "Bug 20 Room Image Text",
+                original: "../assets/bugs/bug_20_room_image_text_20260929_162051.png",
+                annotated: "../assets/bugs_annotated/bug_20_room_image_text_20260929_162051_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_20",
+                name: "Bug 20 Room Image Text",
+                original: "../assets/bugs/bug_20_room_image_text_20260929_163122.png",
+                annotated: "../assets/bugs_annotated/bug_20_room_image_text_20260929_163122_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_20",
+                name: "Bug 20 Room Image Text",
+                original: "../assets/bugs/bug_20_room_image_text_20260929_164401.png",
+                annotated: "../assets/bugs_annotated/bug_20_room_image_text_20260929_164401_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_21",
+                name: "Bug 21 Property Required Validation",
+                original: "../assets/bugs/bug_21_property_required_validation_20260929_162358.png",
+                annotated: "../assets/bugs_annotated/bug_21_property_required_validation_20260929_162358_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_21",
+                name: "Bug 21 Property Required Validation",
+                original: "../assets/bugs/bug_21_property_required_validation_20260929_163125.png",
+                annotated: "../assets/bugs_annotated/bug_21_property_required_validation_20260929_163125_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_21",
+                name: "Bug 21 Property Required Validation",
+                original: "../assets/bugs/bug_21_property_required_validation_20260929_164405.png",
+                annotated: "../assets/bugs_annotated/bug_21_property_required_validation_20260929_164405_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_22",
+                name: "Bug 22 No Records Styling",
+                original: "../assets/bugs/bug_22_no_records_styling_20260929_162401.png",
+                annotated: "../assets/bugs_annotated/bug_22_no_records_styling_20260929_162401_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_22",
+                name: "Bug 22 No Records Styling",
+                original: "../assets/bugs/bug_22_no_records_styling_20260929_163126.png",
+                annotated: "../assets/bugs_annotated/bug_22_no_records_styling_20260929_163126_ANNOTATED.png"
+            },
+
+            {
+                id: "BUG_22",
+                name: "Bug 22 No Records Styling",
+                original: "../assets/bugs/bug_22_no_records_styling_20260929_164406.png",
+                annotated: "../assets/bugs_annotated/bug_22_no_records_styling_20260929_164406_ANNOTATED.png"
+            },
+
+        ];
+        
+        // Populate the page
+        document.getElementById('bugCount').textContent = bugData.length;
+        document.getElementById('annotatedCount').textContent = bugData.length;
+        
+        const grid = document.getElementById('comparisonGrid');
+        
+        bugData.forEach(bug => {
+            const bugDiv = document.createElement('div');
+            bugDiv.className = 'bug-comparison';
+            bugDiv.innerHTML = `
+                <div class="bug-title">${bug.id}: ${bug.name}</div>
+                <div class="images-container">
+                    <div class="image-section">
+                        <div class="image-label original-label">📸 Original Screenshot</div>
+                        <img src="${bug.original}" alt="${bug.id} Original" onclick="openModal('${bug.original}')">
+                    </div>
+                    <div class="image-section">
+                        <div class="image-label annotated-label">✏️ Annotated (Bug Highlighted)</div>
+                        <img src="${bug.annotated}" alt="${bug.id} Annotated" onclick="openModal('${bug.annotated}')">
+                    </div>
+                </div>
+            `;
+            grid.appendChild(bugDiv);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+============================= test session starts ==============================
+platform linux -- Python 3.14.4, pytest-9.1.1, pluggy-1.6.0 -- /home/selvaganesh/Selva-Backup/Git/Playwright/Tariff_Management/venv/bin/python3
+cachedir: .pytest_cache
+metadata: {'Python': '3.14.4', 'Platform': 'Linux-7.0.0-34-generic-x86_64-with-glibc2.43', 'Packages': {'pytest': '9.1.1', 'pluggy': '1.6.0'}, 'Plugins': {'playwright': '0.9.0', 'metadata': '3.1.1', 'html': '4.2.0', 'base-url': '2.1.0'}, 'Base URL': ''}
+rootdir: /home/selvaganesh/Selva-Backup/Git/Playwright/Tariff_Management
+configfile: pytest.ini
+plugins: playwright-0.9.0, metadata-3.1.1, html-4.2.0, base-url-2.1.0
+collecting ... collected 7 items
+
+tests/test_07_proper_bug_reproduction.py::TestProperBugReproduction::test_bug_01_proper_add_room_charges_modal[chromium] ✅ Property selected and data loaded
+✅ Add button found, clicking...
+✅ Modal is visible
+❌ Error: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("button:has-text('Save'), button:has-text('Submit')").first
+    - locator resolved to <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-[0.8125rem] font-semibold font-display ring-offset-background ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/25 focus-visible:ring-offset-1 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-[hsl(var(--btn-primary)/0.2)] px-4 py-2 h-[34px] bg-[#1e3a5f] hover:bg-[#152a45] text-white transition-all duratio…>…</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div class="flex-1 space-y-5 py-2">…</div> from <div role="dialog" tabindex="-1" id="radix-_r_k_" data-state="open" aria-labelledby="radix-_r_l_" aria-describedby="radix-_r_m_" class="fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] gap-4 p-4 sm:p-6 [&>*]:min-w-0 duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-to…>…</div> subtree intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div class="flex-1 space-y-5 py-2">…</div> from <div role="dialog" tabindex="-1" id="radix-_r_k_" data-state="open" aria-labelledby="radix-_r_l_" aria-describedby="radix-_r_m_" class="fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] gap-4 p-4 sm:p-6 [&>*]:min-w-0 duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-to…>…</div> subtree intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    58 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div class="flex-1 space-y-5 py-2">…</div> from <div role="dialog" tabindex="-1" id="radix-_r_k_" data-state="open" aria-labelledby="radix-_r_l_" aria-describedby="radix-_r_m_" class="fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] gap-4 p-4 sm:p-6 [&>*]:min-w-0 duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-to…>…</div> subtree intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+
+PASSED
+tests/test_07_proper_bug_reproduction.py::TestProperBugReproduction::test_bug_02_proper_edit_functionality[chromium] ⚠️  Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[placeholder*='Property'], input[placeholder*='Search Property']").first
+    - locator resolved to <input autocomplete="off" value="AM Property" placeholder="Search Property (min 3 chars)" class="flex h-[36px] w-full rounded-lg border border-border bg-card/70 backdrop-blur-sm px-3 py-1 text-[0.8125rem] shadow-xs ring-offset-background file:border-0 file:bg-transparent file:text-[0.8125rem] file:font-medium file:text-foreground placeholder:text-muted-foreground/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:border-primary/50 disabled:cursor-not-allowe…/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    58 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+
+PASSED
+tests/test_07_proper_bug_reproduction.py::TestProperBugReproduction::test_bug_03_proper_table_filtering[chromium] ⚠️  Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[placeholder*='Property'], input[placeholder*='Search Property']").first
+    - locator resolved to <input autocomplete="off" value="AM Property" placeholder="Search Property (min 3 chars)" class="flex h-[36px] w-full rounded-lg border border-border bg-card/70 backdrop-blur-sm px-3 py-1 text-[0.8125rem] shadow-xs ring-offset-background file:border-0 file:bg-transparent file:text-[0.8125rem] file:font-medium file:text-foreground placeholder:text-muted-foreground/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:border-primary/50 disabled:cursor-not-allowe…/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    58 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+
+PASSED
+tests/test_07_proper_bug_reproduction.py::TestProperBugReproduction::test_bug_04_proper_horizontal_scroll[chromium] ⚠️  Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[placeholder*='Property'], input[placeholder*='Search Property']").first
+    - locator resolved to <input autocomplete="off" value="AM Property" placeholder="Search Property (min 3 chars)" class="flex h-[36px] w-full rounded-lg border border-border bg-card/70 backdrop-blur-sm px-3 py-1 text-[0.8125rem] shadow-xs ring-offset-background file:border-0 file:bg-transparent file:text-[0.8125rem] file:font-medium file:text-foreground placeholder:text-muted-foreground/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:border-primary/50 disabled:cursor-not-allowe…/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    58 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+
+PASSED
+tests/test_07_proper_bug_reproduction.py::TestProperBugReproduction::test_bug_05_proper_form_validation[chromium] ⚠️  Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[placeholder*='Property'], input[placeholder*='Search Property']").first
+    - locator resolved to <input autocomplete="off" value="AM Property" placeholder="Search Property (min 3 chars)" class="flex h-[36px] w-full rounded-lg border border-border bg-card/70 backdrop-blur-sm px-3 py-1 text-[0.8125rem] shadow-xs ring-offset-background file:border-0 file:bg-transparent file:text-[0.8125rem] file:font-medium file:text-foreground placeholder:text-muted-foreground/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:border-primary/50 disabled:cursor-not-allowe…/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    57 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+
+PASSED
+tests/test_07_proper_bug_reproduction.py::TestProperBugReproduction::test_bug_06_proper_responsive_mobile[chromium] ⚠️  Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[placeholder*='Property'], input[placeholder*='Search Property']").first
+    - locator resolved to <input autocomplete="off" value="AM Property" placeholder="Search Property (min 3 chars)" class="flex h-[36px] w-full rounded-lg border border-border bg-card/70 backdrop-blur-sm px-3 py-1 text-[0.8125rem] shadow-xs ring-offset-background file:border-0 file:bg-transparent file:text-[0.8125rem] file:font-medium file:text-foreground placeholder:text-muted-foreground/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:border-primary/50 disabled:cursor-not-allowe…/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    58 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+
+PASSED
+tests/test_07_proper_bug_reproduction.py::TestProperBugReproduction::test_bug_07_proper_tac_exceptions_tab[chromium] ⚠️  Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[placeholder*='Property'], input[placeholder*='Search Property']").first
+    - locator resolved to <input autocomplete="off" value="AM Property" placeholder="Search Property (min 3 chars)" class="flex h-[36px] w-full rounded-lg border border-border bg-card/70 backdrop-blur-sm px-3 py-1 text-[0.8125rem] shadow-xs ring-offset-background file:border-0 file:bg-transparent file:text-[0.8125rem] file:font-medium file:text-foreground placeholder:text-muted-foreground/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:border-primary/50 disabled:cursor-not-allowe…/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    58 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+
+PASSED
+
+- Generated html report: file:///home/selvaganesh/Selva-Backup/Git/Playwright/Tariff_Management/reports/report.html -
+======================== 7 passed in 255.81s (0:04:15) =========================

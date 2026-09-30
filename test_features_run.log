@@ -1,0 +1,28 @@
+============================= test session starts ==============================
+platform linux -- Python 3.14.4, pytest-9.1.1, pluggy-1.6.0 -- /home/selvaganesh/Selva-Backup/Git/Playwright/Tariff_Management/venv/bin/python3
+cachedir: .pytest_cache
+metadata: {'Python': '3.14.4', 'Platform': 'Linux-7.0.0-34-generic-x86_64-with-glibc2.43', 'Packages': {'pytest': '9.1.1', 'pluggy': '1.6.0'}, 'Plugins': {'playwright': '0.9.0', 'metadata': '3.1.1', 'html': '4.2.0', 'base-url': '2.1.0'}, 'Base URL': ''}
+rootdir: /home/selvaganesh/Selva-Backup/Git/Playwright/Tariff_Management
+configfile: pytest.ini
+plugins: playwright-0.9.0, metadata-3.1.1, html-4.2.0, base-url-2.1.0
+collecting ... collected 16 items
+
+tests/test_12_comprehensive_all_features.py::TestComprehensiveFeatures::test_01_add_room_charges_button[chromium] ✅ Logged in and navigated to Tariff Management page
+
+🎯 Test 01: Add Room Charges Button
+PASSED
+tests/test_12_comprehensive_all_features.py::TestComprehensiveFeatures::test_02_create_new_room_button[chromium] 
+🎯 Test 02: Create New Room Button
+✅ Property selected
+📸 Screenshot: assets/features/create_new_room_btn_hover_20260930_093708.png
+✅ Room Details dialog opened
+📸 Screenshot: assets/features/room_details_dialog_opened_20260930_093712.png
+⚠️ Some modals may still be open
+PASSED
+tests/test_12_comprehensive_all_features.py::TestComprehensiveFeatures::test_03_history_button_click[chromium] 
+🎯 Test 03: History Button & Modal
+FAILED
+tests/test_12_comprehensive_all_features.py::TestComprehensiveFeatures::test_04_history_realtime_data[chromium] 
+🎯 Test 04: History Real-time API Data
+FAILED
+tests/test_12_comprehensive_all_features.py::TestComprehensiveFeatures::test_05_history_filtration[chromium] 

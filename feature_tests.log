@@ -1,0 +1,1582 @@
+============================= test session starts ==============================
+platform linux -- Python 3.14.4, pytest-9.1.1, pluggy-1.6.0 -- /home/selvaganesh/Selva-Backup/Git/Playwright/Tariff_Management/venv/bin/python3
+cachedir: .pytest_cache
+metadata: {'Python': '3.14.4', 'Platform': 'Linux-7.0.0-34-generic-x86_64-with-glibc2.43', 'Packages': {'pytest': '9.1.1', 'pluggy': '1.6.0'}, 'Plugins': {'playwright': '0.9.0', 'metadata': '3.1.1', 'html': '4.2.0', 'base-url': '2.1.0'}, 'Base URL': ''}
+rootdir: /home/selvaganesh/Selva-Backup/Git/Playwright/Tariff_Management
+configfile: pytest.ini
+plugins: playwright-0.9.0, metadata-3.1.1, html-4.2.0, base-url-2.1.0
+collecting ... collected 16 items
+
+tests/test_12_comprehensive_all_features.py::TestComprehensiveFeatures::test_01_add_room_charges_button[chromium] ✅ Logged in and navigated to Tariff Management page
+
+🎯 Test 01: Add Room Charges Button
+✅ Property selected
+📸 Screenshot: assets/features/add_room_charges_btn_hover_20260929_185932.png
+✅ Add Room Charges dialog opened successfully
+📸 Screenshot: assets/features/add_room_charges_dialog_opened_20260929_185937.png
+PASSED
+tests/test_12_comprehensive_all_features.py::TestComprehensiveFeatures::test_02_create_new_room_button[chromium] 
+🎯 Test 02: Create New Room Button
+FAILED
+tests/test_12_comprehensive_all_features.py::TestComprehensiveFeatures::test_03_history_button_click[chromium] 
+🎯 Test 03: History Button & Modal
+FAILED
+tests/test_12_comprehensive_all_features.py::TestComprehensiveFeatures::test_04_history_realtime_data[chromium] 
+🎯 Test 04: History Real-time API Data
+FAILED
+tests/test_12_comprehensive_all_features.py::TestComprehensiveFeatures::test_05_history_filtration[chromium] 
+🎯 Test 05: History Filtration
+FAILED
+tests/test_12_comprehensive_all_features.py::TestComprehensiveFeatures::test_06_history_pagination[chromium] 
+🎯 Test 06: History Pagination
+FAILED
+tests/test_12_comprehensive_all_features.py::TestComprehensiveFeatures::test_07_history_screen_actions[chromium] 
+🎯 Test 07: History Screen Actions
+FAILED
+tests/test_12_comprehensive_all_features.py::TestComprehensiveFeatures::test_08_export_option[chromium] 
+🎯 Test 08: Export Option
+FAILED
+tests/test_12_comprehensive_all_features.py::TestComprehensiveFeatures::test_09_table_edit_button[chromium] 
+🎯 Test 09: Table Edit Button
+FAILED
+tests/test_12_comprehensive_all_features.py::TestComprehensiveFeatures::test_10_edit_room_details_modal[chromium] 
+🎯 Test 10: Edit Room Details Modal
+FAILED
+tests/test_12_comprehensive_all_features.py::TestComprehensiveFeatures::test_11_update_room_functionality[chromium] 
+🎯 Test 11: Update Room Functionality
+FAILED
+tests/test_12_comprehensive_all_features.py::TestComprehensiveFeatures::test_12_table_delete_button[chromium] 
+🎯 Test 12: Table Delete Button
+FAILED
+tests/test_12_comprehensive_all_features.py::TestComprehensiveFeatures::test_13_room_details_all_fields[chromium] 
+🎯 Test 13: Room Details All Fields
+FAILED
+tests/test_12_comprehensive_all_features.py::TestComprehensiveFeatures::test_14_upload_image_feature[chromium] 
+🎯 Test 14: Upload Image Feature
+FAILED
+tests/test_12_comprehensive_all_features.py::TestComprehensiveFeatures::test_15_room_charge_details_save[chromium] 
+🎯 Test 15: Room Charge Details & Save
+FAILED
+tests/test_12_comprehensive_all_features.py::TestComprehensiveFeatures::test_16_complete_create_room_workflow[chromium] 
+🎯 Test 16: Complete Create Room Workflow
+FAILED
+
+=================================== FAILURES ===================================
+______ TestComprehensiveFeatures.test_02_create_new_room_button[chromium] ______
+
+self = <tests.test_12_comprehensive_all_features.TestComprehensiveFeatures object at 0x73e13e10da90>
+logged_in_page = <Page url='https://test-warsoft-v4.hummingbirdindia.com/property/tariff'>
+
+    def test_02_create_new_room_button(self, logged_in_page: Page):
+        """Test Create New Room button in Add Room Charges dialog"""
+        print("\n🎯 Test 02: Create New Room Button")
+    
+>       if self.select_property(logged_in_page):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_12_comprehensive_all_features.py:103: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_12_comprehensive_all_features.py:50: in select_property
+    property_input.click()
+venv/lib/python3.14/site-packages/playwright/sync_api/_generated.py:18032: in click
+    self._sync(
+venv/lib/python3.14/site-packages/playwright/_impl/_locator.py:165: in click
+    return await self._frame._click(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.14/site-packages/playwright/_impl/_frame.py:594: in _click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+venv/lib/python3.14/site-packages/playwright/_impl/_connection.py:76: in send
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <playwright._impl._connection.Connection object at 0x73e13dfd06e0>
+cb = <function Channel.send.<locals>.<lambda> at 0x73e13e049f30>
+is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -> Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        parsed_st = _attach_api_call_information(
+            getattr(task, "__pw_stack__", None) or _capture_stack_trace(),
+            is_internal,
+            title,
+        )
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+>           raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+E           playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+E           Call log:
+E             - waiting for locator("input[placeholder*='Property']").first
+E               - locator resolved to <input autocomplete="off" value="AM Property" placeholder="Search Property (min 3 chars)" class="flex h-[36px] w-full rounded-lg border border-border bg-card/70 backdrop-blur-sm px-3 py-1 text-[0.8125rem] shadow-xs ring-offset-background file:border-0 file:bg-transparent file:text-[0.8125rem] file:font-medium file:text-foreground placeholder:text-muted-foreground/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:border-primary/50 disabled:cursor-not-allowe…/>
+E             - attempting click action
+E               2 × waiting for element to be visible, enabled and stable
+E                 - element is visible, enabled and stable
+E                 - scrolling into view if needed
+E                 - done scrolling
+E                 - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E               - retrying click action
+E               - waiting 20ms
+E               2 × waiting for element to be visible, enabled and stable
+E                 - element is visible, enabled and stable
+E                 - scrolling into view if needed
+E                 - done scrolling
+E                 - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E               - retrying click action
+E                 - waiting 100ms
+E               56 × waiting for element to be visible, enabled and stable
+E                  - element is visible, enabled and stable
+E                  - scrolling into view if needed
+E                  - done scrolling
+E                  - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E                - retrying click action
+E                  - waiting 500ms
+
+venv/lib/python3.14/site-packages/playwright/_impl/_connection.py:632: TimeoutError
+_______ TestComprehensiveFeatures.test_03_history_button_click[chromium] _______
+
+self = <tests.test_12_comprehensive_all_features.TestComprehensiveFeatures object at 0x73e13e0abe10>
+logged_in_page = <Page url='https://test-warsoft-v4.hummingbirdindia.com/property/tariff'>
+
+    def test_03_history_button_click(self, logged_in_page: Page):
+        """Test History button and modal opening"""
+        print("\n🎯 Test 03: History Button & Modal")
+    
+>       if self.select_property(logged_in_page):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_12_comprehensive_all_features.py:136: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_12_comprehensive_all_features.py:50: in select_property
+    property_input.click()
+venv/lib/python3.14/site-packages/playwright/sync_api/_generated.py:18032: in click
+    self._sync(
+venv/lib/python3.14/site-packages/playwright/_impl/_locator.py:165: in click
+    return await self._frame._click(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.14/site-packages/playwright/_impl/_frame.py:594: in _click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+venv/lib/python3.14/site-packages/playwright/_impl/_connection.py:76: in send
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <playwright._impl._connection.Connection object at 0x73e13dfd06e0>
+cb = <function Channel.send.<locals>.<lambda> at 0x73e13dd64f60>
+is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -> Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        parsed_st = _attach_api_call_information(
+            getattr(task, "__pw_stack__", None) or _capture_stack_trace(),
+            is_internal,
+            title,
+        )
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+>           raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+E           playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+E           Call log:
+E             - waiting for locator("input[placeholder*='Property']").first
+E               - locator resolved to <input autocomplete="off" value="AM Property" placeholder="Search Property (min 3 chars)" class="flex h-[36px] w-full rounded-lg border border-border bg-card/70 backdrop-blur-sm px-3 py-1 text-[0.8125rem] shadow-xs ring-offset-background file:border-0 file:bg-transparent file:text-[0.8125rem] file:font-medium file:text-foreground placeholder:text-muted-foreground/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:border-primary/50 disabled:cursor-not-allowe…/>
+E             - attempting click action
+E               2 × waiting for element to be visible, enabled and stable
+E                 - element is visible, enabled and stable
+E                 - scrolling into view if needed
+E                 - done scrolling
+E                 - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E               - retrying click action
+E               - waiting 20ms
+E               2 × waiting for element to be visible, enabled and stable
+E                 - element is visible, enabled and stable
+E                 - scrolling into view if needed
+E                 - done scrolling
+E                 - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E               - retrying click action
+E                 - waiting 100ms
+E               56 × waiting for element to be visible, enabled and stable
+E                  - element is visible, enabled and stable
+E                  - scrolling into view if needed
+E                  - done scrolling
+E                  - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E                - retrying click action
+E                  - waiting 500ms
+
+venv/lib/python3.14/site-packages/playwright/_impl/_connection.py:632: TimeoutError
+______ TestComprehensiveFeatures.test_04_history_realtime_data[chromium] _______
+
+self = <tests.test_12_comprehensive_all_features.TestComprehensiveFeatures object at 0x73e13dfa8180>
+logged_in_page = <Page url='https://test-warsoft-v4.hummingbirdindia.com/property/tariff'>
+
+    def test_04_history_realtime_data(self, logged_in_page: Page):
+        """Test History modal shows real-time API data"""
+        print("\n🎯 Test 04: History Real-time API Data")
+    
+>       if self.select_property(logged_in_page):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_12_comprehensive_all_features.py:165: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_12_comprehensive_all_features.py:50: in select_property
+    property_input.click()
+venv/lib/python3.14/site-packages/playwright/sync_api/_generated.py:18032: in click
+    self._sync(
+venv/lib/python3.14/site-packages/playwright/_impl/_locator.py:165: in click
+    return await self._frame._click(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.14/site-packages/playwright/_impl/_frame.py:594: in _click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+venv/lib/python3.14/site-packages/playwright/_impl/_connection.py:76: in send
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <playwright._impl._connection.Connection object at 0x73e13dfd06e0>
+cb = <function Channel.send.<locals>.<lambda> at 0x73e13dd652d0>
+is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -> Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        parsed_st = _attach_api_call_information(
+            getattr(task, "__pw_stack__", None) or _capture_stack_trace(),
+            is_internal,
+            title,
+        )
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+>           raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+E           playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+E           Call log:
+E             - waiting for locator("input[placeholder*='Property']").first
+E               - locator resolved to <input autocomplete="off" value="AM Property" placeholder="Search Property (min 3 chars)" class="flex h-[36px] w-full rounded-lg border border-border bg-card/70 backdrop-blur-sm px-3 py-1 text-[0.8125rem] shadow-xs ring-offset-background file:border-0 file:bg-transparent file:text-[0.8125rem] file:font-medium file:text-foreground placeholder:text-muted-foreground/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:border-primary/50 disabled:cursor-not-allowe…/>
+E             - attempting click action
+E               2 × waiting for element to be visible, enabled and stable
+E                 - element is visible, enabled and stable
+E                 - scrolling into view if needed
+E                 - done scrolling
+E                 - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E               - retrying click action
+E               - waiting 20ms
+E               2 × waiting for element to be visible, enabled and stable
+E                 - element is visible, enabled and stable
+E                 - scrolling into view if needed
+E                 - done scrolling
+E                 - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E               - retrying click action
+E                 - waiting 100ms
+E               56 × waiting for element to be visible, enabled and stable
+E                  - element is visible, enabled and stable
+E                  - scrolling into view if needed
+E                  - done scrolling
+E                  - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E                - retrying click action
+E                  - waiting 500ms
+
+venv/lib/python3.14/site-packages/playwright/_impl/_connection.py:632: TimeoutError
+________ TestComprehensiveFeatures.test_05_history_filtration[chromium] ________
+
+self = <tests.test_12_comprehensive_all_features.TestComprehensiveFeatures object at 0x73e13e1269f0>
+logged_in_page = <Page url='https://test-warsoft-v4.hummingbirdindia.com/property/tariff'>
+
+    def test_05_history_filtration(self, logged_in_page: Page):
+        """Test History modal filtration feature"""
+        print("\n🎯 Test 05: History Filtration")
+    
+>       if self.select_property(logged_in_page):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_12_comprehensive_all_features.py:192: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_12_comprehensive_all_features.py:50: in select_property
+    property_input.click()
+venv/lib/python3.14/site-packages/playwright/sync_api/_generated.py:18032: in click
+    self._sync(
+venv/lib/python3.14/site-packages/playwright/_impl/_locator.py:165: in click
+    return await self._frame._click(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.14/site-packages/playwright/_impl/_frame.py:594: in _click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+venv/lib/python3.14/site-packages/playwright/_impl/_connection.py:76: in send
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <playwright._impl._connection.Connection object at 0x73e13dfd06e0>
+cb = <function Channel.send.<locals>.<lambda> at 0x73e13dd65220>
+is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -> Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        parsed_st = _attach_api_call_information(
+            getattr(task, "__pw_stack__", None) or _capture_stack_trace(),
+            is_internal,
+            title,
+        )
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+>           raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+E           playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+E           Call log:
+E             - waiting for locator("input[placeholder*='Property']").first
+E               - locator resolved to <input autocomplete="off" value="AM Property" placeholder="Search Property (min 3 chars)" class="flex h-[36px] w-full rounded-lg border border-border bg-card/70 backdrop-blur-sm px-3 py-1 text-[0.8125rem] shadow-xs ring-offset-background file:border-0 file:bg-transparent file:text-[0.8125rem] file:font-medium file:text-foreground placeholder:text-muted-foreground/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:border-primary/50 disabled:cursor-not-allowe…/>
+E             - attempting click action
+E               2 × waiting for element to be visible, enabled and stable
+E                 - element is visible, enabled and stable
+E                 - scrolling into view if needed
+E                 - done scrolling
+E                 - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E               - retrying click action
+E               - waiting 20ms
+E               2 × waiting for element to be visible, enabled and stable
+E                 - element is visible, enabled and stable
+E                 - scrolling into view if needed
+E                 - done scrolling
+E                 - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E               - retrying click action
+E                 - waiting 100ms
+E               56 × waiting for element to be visible, enabled and stable
+E                  - element is visible, enabled and stable
+E                  - scrolling into view if needed
+E                  - done scrolling
+E                  - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E                - retrying click action
+E                  - waiting 500ms
+
+venv/lib/python3.14/site-packages/playwright/_impl/_connection.py:632: TimeoutError
+________ TestComprehensiveFeatures.test_06_history_pagination[chromium] ________
+
+self = <tests.test_12_comprehensive_all_features.TestComprehensiveFeatures object at 0x73e13e1117b0>
+logged_in_page = <Page url='https://test-warsoft-v4.hummingbirdindia.com/property/tariff'>
+
+    def test_06_history_pagination(self, logged_in_page: Page):
+        """Test History modal pagination"""
+        print("\n🎯 Test 06: History Pagination")
+    
+>       if self.select_property(logged_in_page):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_12_comprehensive_all_features.py:224: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_12_comprehensive_all_features.py:50: in select_property
+    property_input.click()
+venv/lib/python3.14/site-packages/playwright/sync_api/_generated.py:18032: in click
+    self._sync(
+venv/lib/python3.14/site-packages/playwright/_impl/_locator.py:165: in click
+    return await self._frame._click(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.14/site-packages/playwright/_impl/_frame.py:594: in _click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+venv/lib/python3.14/site-packages/playwright/_impl/_connection.py:76: in send
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <playwright._impl._connection.Connection object at 0x73e13dfd06e0>
+cb = <function Channel.send.<locals>.<lambda> at 0x73e13dd3d170>
+is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -> Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        parsed_st = _attach_api_call_information(
+            getattr(task, "__pw_stack__", None) or _capture_stack_trace(),
+            is_internal,
+            title,
+        )
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+>           raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+E           playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+E           Call log:
+E             - waiting for locator("input[placeholder*='Property']").first
+E               - locator resolved to <input autocomplete="off" value="AM Property" placeholder="Search Property (min 3 chars)" class="flex h-[36px] w-full rounded-lg border border-border bg-card/70 backdrop-blur-sm px-3 py-1 text-[0.8125rem] shadow-xs ring-offset-background file:border-0 file:bg-transparent file:text-[0.8125rem] file:font-medium file:text-foreground placeholder:text-muted-foreground/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:border-primary/50 disabled:cursor-not-allowe…/>
+E             - attempting click action
+E               2 × waiting for element to be visible, enabled and stable
+E                 - element is visible, enabled and stable
+E                 - scrolling into view if needed
+E                 - done scrolling
+E                 - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E               - retrying click action
+E               - waiting 20ms
+E               2 × waiting for element to be visible, enabled and stable
+E                 - element is visible, enabled and stable
+E                 - scrolling into view if needed
+E                 - done scrolling
+E                 - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E               - retrying click action
+E                 - waiting 100ms
+E               56 × waiting for element to be visible, enabled and stable
+E                  - element is visible, enabled and stable
+E                  - scrolling into view if needed
+E                  - done scrolling
+E                  - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E                - retrying click action
+E                  - waiting 500ms
+
+venv/lib/python3.14/site-packages/playwright/_impl/_connection.py:632: TimeoutError
+______ TestComprehensiveFeatures.test_07_history_screen_actions[chromium] ______
+
+self = <tests.test_12_comprehensive_all_features.TestComprehensiveFeatures object at 0x73e13e1119d0>
+logged_in_page = <Page url='https://test-warsoft-v4.hummingbirdindia.com/property/tariff'>
+
+    def test_07_history_screen_actions(self, logged_in_page: Page):
+        """Test History modal action buttons"""
+        print("\n🎯 Test 07: History Screen Actions")
+    
+>       if self.select_property(logged_in_page):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_12_comprehensive_all_features.py:265: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_12_comprehensive_all_features.py:50: in select_property
+    property_input.click()
+venv/lib/python3.14/site-packages/playwright/sync_api/_generated.py:18032: in click
+    self._sync(
+venv/lib/python3.14/site-packages/playwright/_impl/_locator.py:165: in click
+    return await self._frame._click(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.14/site-packages/playwright/_impl/_frame.py:594: in _click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+venv/lib/python3.14/site-packages/playwright/_impl/_connection.py:76: in send
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <playwright._impl._connection.Connection object at 0x73e13dfd06e0>
+cb = <function Channel.send.<locals>.<lambda> at 0x73e13dd3d640>
+is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -> Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        parsed_st = _attach_api_call_information(
+            getattr(task, "__pw_stack__", None) or _capture_stack_trace(),
+            is_internal,
+            title,
+        )
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+>           raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+E           playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+E           Call log:
+E             - waiting for locator("input[placeholder*='Property']").first
+E               - locator resolved to <input autocomplete="off" value="AM Property" placeholder="Search Property (min 3 chars)" class="flex h-[36px] w-full rounded-lg border border-border bg-card/70 backdrop-blur-sm px-3 py-1 text-[0.8125rem] shadow-xs ring-offset-background file:border-0 file:bg-transparent file:text-[0.8125rem] file:font-medium file:text-foreground placeholder:text-muted-foreground/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:border-primary/50 disabled:cursor-not-allowe…/>
+E             - attempting click action
+E               2 × waiting for element to be visible, enabled and stable
+E                 - element is visible, enabled and stable
+E                 - scrolling into view if needed
+E                 - done scrolling
+E                 - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E               - retrying click action
+E               - waiting 20ms
+E               2 × waiting for element to be visible, enabled and stable
+E                 - element is visible, enabled and stable
+E                 - scrolling into view if needed
+E                 - done scrolling
+E                 - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E               - retrying click action
+E                 - waiting 100ms
+E               56 × waiting for element to be visible, enabled and stable
+E                  - element is visible, enabled and stable
+E                  - scrolling into view if needed
+E                  - done scrolling
+E                  - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E                - retrying click action
+E                  - waiting 500ms
+
+venv/lib/python3.14/site-packages/playwright/_impl/_connection.py:632: TimeoutError
+__________ TestComprehensiveFeatures.test_08_export_option[chromium] ___________
+
+self = <tests.test_12_comprehensive_all_features.TestComprehensiveFeatures object at 0x73e13e151750>
+logged_in_page = <Page url='https://test-warsoft-v4.hummingbirdindia.com/property/tariff'>
+
+    def test_08_export_option(self, logged_in_page: Page):
+        """Test Export functionality"""
+        print("\n🎯 Test 08: Export Option")
+    
+>       if self.select_property(logged_in_page):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_12_comprehensive_all_features.py:287: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_12_comprehensive_all_features.py:50: in select_property
+    property_input.click()
+venv/lib/python3.14/site-packages/playwright/sync_api/_generated.py:18032: in click
+    self._sync(
+venv/lib/python3.14/site-packages/playwright/_impl/_locator.py:165: in click
+    return await self._frame._click(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.14/site-packages/playwright/_impl/_frame.py:594: in _click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+venv/lib/python3.14/site-packages/playwright/_impl/_connection.py:76: in send
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <playwright._impl._connection.Connection object at 0x73e13dfd06e0>
+cb = <function Channel.send.<locals>.<lambda> at 0x73e13dd64e00>
+is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -> Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        parsed_st = _attach_api_call_information(
+            getattr(task, "__pw_stack__", None) or _capture_stack_trace(),
+            is_internal,
+            title,
+        )
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+>           raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+E           playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+E           Call log:
+E             - waiting for locator("input[placeholder*='Property']").first
+E               - locator resolved to <input autocomplete="off" value="AM Property" placeholder="Search Property (min 3 chars)" class="flex h-[36px] w-full rounded-lg border border-border bg-card/70 backdrop-blur-sm px-3 py-1 text-[0.8125rem] shadow-xs ring-offset-background file:border-0 file:bg-transparent file:text-[0.8125rem] file:font-medium file:text-foreground placeholder:text-muted-foreground/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:border-primary/50 disabled:cursor-not-allowe…/>
+E             - attempting click action
+E               2 × waiting for element to be visible, enabled and stable
+E                 - element is visible, enabled and stable
+E                 - scrolling into view if needed
+E                 - done scrolling
+E                 - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E               - retrying click action
+E               - waiting 20ms
+E               2 × waiting for element to be visible, enabled and stable
+E                 - element is visible, enabled and stable
+E                 - scrolling into view if needed
+E                 - done scrolling
+E                 - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E               - retrying click action
+E                 - waiting 100ms
+E               56 × waiting for element to be visible, enabled and stable
+E                  - element is visible, enabled and stable
+E                  - scrolling into view if needed
+E                  - done scrolling
+E                  - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E                - retrying click action
+E                  - waiting 500ms
+
+venv/lib/python3.14/site-packages/playwright/_impl/_connection.py:632: TimeoutError
+________ TestComprehensiveFeatures.test_09_table_edit_button[chromium] _________
+
+self = <tests.test_12_comprehensive_all_features.TestComprehensiveFeatures object at 0x73e13e151950>
+logged_in_page = <Page url='https://test-warsoft-v4.hummingbirdindia.com/property/tariff'>
+
+    def test_09_table_edit_button(self, logged_in_page: Page):
+        """Test Edit button in property tariff table"""
+        print("\n🎯 Test 09: Table Edit Button")
+    
+>       if self.select_property(logged_in_page):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_12_comprehensive_all_features.py:310: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_12_comprehensive_all_features.py:50: in select_property
+    property_input.click()
+venv/lib/python3.14/site-packages/playwright/sync_api/_generated.py:18032: in click
+    self._sync(
+venv/lib/python3.14/site-packages/playwright/_impl/_locator.py:165: in click
+    return await self._frame._click(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.14/site-packages/playwright/_impl/_frame.py:594: in _click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+venv/lib/python3.14/site-packages/playwright/_impl/_connection.py:76: in send
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <playwright._impl._connection.Connection object at 0x73e13dfd06e0>
+cb = <function Channel.send.<locals>.<lambda> at 0x73e13dfbcd50>
+is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -> Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        parsed_st = _attach_api_call_information(
+            getattr(task, "__pw_stack__", None) or _capture_stack_trace(),
+            is_internal,
+            title,
+        )
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+>           raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+E           playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+E           Call log:
+E             - waiting for locator("input[placeholder*='Property']").first
+E               - locator resolved to <input autocomplete="off" value="AM Property" placeholder="Search Property (min 3 chars)" class="flex h-[36px] w-full rounded-lg border border-border bg-card/70 backdrop-blur-sm px-3 py-1 text-[0.8125rem] shadow-xs ring-offset-background file:border-0 file:bg-transparent file:text-[0.8125rem] file:font-medium file:text-foreground placeholder:text-muted-foreground/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:border-primary/50 disabled:cursor-not-allowe…/>
+E             - attempting click action
+E               2 × waiting for element to be visible, enabled and stable
+E                 - element is visible, enabled and stable
+E                 - scrolling into view if needed
+E                 - done scrolling
+E                 - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E               - retrying click action
+E               - waiting 20ms
+E               2 × waiting for element to be visible, enabled and stable
+E                 - element is visible, enabled and stable
+E                 - scrolling into view if needed
+E                 - done scrolling
+E                 - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E               - retrying click action
+E                 - waiting 100ms
+E               56 × waiting for element to be visible, enabled and stable
+E                  - element is visible, enabled and stable
+E                  - scrolling into view if needed
+E                  - done scrolling
+E                  - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E                - retrying click action
+E                  - waiting 500ms
+
+venv/lib/python3.14/site-packages/playwright/_impl/_connection.py:632: TimeoutError
+_____ TestComprehensiveFeatures.test_10_edit_room_details_modal[chromium] ______
+
+self = <tests.test_12_comprehensive_all_features.TestComprehensiveFeatures object at 0x73e13e1796d0>
+logged_in_page = <Page url='https://test-warsoft-v4.hummingbirdindia.com/property/tariff'>
+
+    def test_10_edit_room_details_modal(self, logged_in_page: Page):
+        """Test Edit Room Details modal fields"""
+        print("\n🎯 Test 10: Edit Room Details Modal")
+    
+>       if self.select_property(logged_in_page):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_12_comprehensive_all_features.py:337: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_12_comprehensive_all_features.py:50: in select_property
+    property_input.click()
+venv/lib/python3.14/site-packages/playwright/sync_api/_generated.py:18032: in click
+    self._sync(
+venv/lib/python3.14/site-packages/playwright/_impl/_locator.py:165: in click
+    return await self._frame._click(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.14/site-packages/playwright/_impl/_frame.py:594: in _click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+venv/lib/python3.14/site-packages/playwright/_impl/_connection.py:76: in send
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <playwright._impl._connection.Connection object at 0x73e13dfd06e0>
+cb = <function Channel.send.<locals>.<lambda> at 0x73e13e192c40>
+is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -> Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        parsed_st = _attach_api_call_information(
+            getattr(task, "__pw_stack__", None) or _capture_stack_trace(),
+            is_internal,
+            title,
+        )
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+>           raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+E           playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+E           Call log:
+E             - waiting for locator("input[placeholder*='Property']").first
+E               - locator resolved to <input autocomplete="off" value="AM Property" placeholder="Search Property (min 3 chars)" class="flex h-[36px] w-full rounded-lg border border-border bg-card/70 backdrop-blur-sm px-3 py-1 text-[0.8125rem] shadow-xs ring-offset-background file:border-0 file:bg-transparent file:text-[0.8125rem] file:font-medium file:text-foreground placeholder:text-muted-foreground/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:border-primary/50 disabled:cursor-not-allowe…/>
+E             - attempting click action
+E               2 × waiting for element to be visible, enabled and stable
+E                 - element is visible, enabled and stable
+E                 - scrolling into view if needed
+E                 - done scrolling
+E                 - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E               - retrying click action
+E               - waiting 20ms
+E               2 × waiting for element to be visible, enabled and stable
+E                 - element is visible, enabled and stable
+E                 - scrolling into view if needed
+E                 - done scrolling
+E                 - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E               - retrying click action
+E                 - waiting 100ms
+E               56 × waiting for element to be visible, enabled and stable
+E                  - element is visible, enabled and stable
+E                  - scrolling into view if needed
+E                  - done scrolling
+E                  - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E                - retrying click action
+E                  - waiting 500ms
+
+venv/lib/python3.14/site-packages/playwright/_impl/_connection.py:632: TimeoutError
+____ TestComprehensiveFeatures.test_11_update_room_functionality[chromium] _____
+
+self = <tests.test_12_comprehensive_all_features.TestComprehensiveFeatures object at 0x73e13e1798b0>
+logged_in_page = <Page url='https://test-warsoft-v4.hummingbirdindia.com/property/tariff'>
+
+    def test_11_update_room_functionality(self, logged_in_page: Page):
+        """Test updating room tariff"""
+        print("\n🎯 Test 11: Update Room Functionality")
+    
+>       if self.select_property(logged_in_page):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_12_comprehensive_all_features.py:361: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_12_comprehensive_all_features.py:50: in select_property
+    property_input.click()
+venv/lib/python3.14/site-packages/playwright/sync_api/_generated.py:18032: in click
+    self._sync(
+venv/lib/python3.14/site-packages/playwright/_impl/_locator.py:165: in click
+    return await self._frame._click(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.14/site-packages/playwright/_impl/_frame.py:594: in _click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+venv/lib/python3.14/site-packages/playwright/_impl/_connection.py:76: in send
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <playwright._impl._connection.Connection object at 0x73e13dfd06e0>
+cb = <function Channel.send.<locals>.<lambda> at 0x73e13e192e50>
+is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -> Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        parsed_st = _attach_api_call_information(
+            getattr(task, "__pw_stack__", None) or _capture_stack_trace(),
+            is_internal,
+            title,
+        )
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+>           raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+E           playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+E           Call log:
+E             - waiting for locator("input[placeholder*='Property']").first
+E               - locator resolved to <input autocomplete="off" value="AM Property" placeholder="Search Property (min 3 chars)" class="flex h-[36px] w-full rounded-lg border border-border bg-card/70 backdrop-blur-sm px-3 py-1 text-[0.8125rem] shadow-xs ring-offset-background file:border-0 file:bg-transparent file:text-[0.8125rem] file:font-medium file:text-foreground placeholder:text-muted-foreground/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:border-primary/50 disabled:cursor-not-allowe…/>
+E             - attempting click action
+E               2 × waiting for element to be visible, enabled and stable
+E                 - element is visible, enabled and stable
+E                 - scrolling into view if needed
+E                 - done scrolling
+E                 - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E               - retrying click action
+E               - waiting 20ms
+E               2 × waiting for element to be visible, enabled and stable
+E                 - element is visible, enabled and stable
+E                 - scrolling into view if needed
+E                 - done scrolling
+E                 - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E               - retrying click action
+E                 - waiting 100ms
+E               56 × waiting for element to be visible, enabled and stable
+E                  - element is visible, enabled and stable
+E                  - scrolling into view if needed
+E                  - done scrolling
+E                  - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E                - retrying click action
+E                  - waiting 500ms
+
+venv/lib/python3.14/site-packages/playwright/_impl/_connection.py:632: TimeoutError
+_______ TestComprehensiveFeatures.test_12_table_delete_button[chromium] ________
+
+self = <tests.test_12_comprehensive_all_features.TestComprehensiveFeatures object at 0x73e13dfb12b0>
+logged_in_page = <Page url='https://test-warsoft-v4.hummingbirdindia.com/property/tariff'>
+
+    def test_12_table_delete_button(self, logged_in_page: Page):
+        """Test Delete button in property tariff table"""
+        print("\n🎯 Test 12: Table Delete Button")
+    
+>       if self.select_property(logged_in_page):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_12_comprehensive_all_features.py:402: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_12_comprehensive_all_features.py:50: in select_property
+    property_input.click()
+venv/lib/python3.14/site-packages/playwright/sync_api/_generated.py:18032: in click
+    self._sync(
+venv/lib/python3.14/site-packages/playwright/_impl/_locator.py:165: in click
+    return await self._frame._click(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.14/site-packages/playwright/_impl/_frame.py:594: in _click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+venv/lib/python3.14/site-packages/playwright/_impl/_connection.py:76: in send
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <playwright._impl._connection.Connection object at 0x73e13dfd06e0>
+cb = <function Channel.send.<locals>.<lambda> at 0x73e13e191640>
+is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -> Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        parsed_st = _attach_api_call_information(
+            getattr(task, "__pw_stack__", None) or _capture_stack_trace(),
+            is_internal,
+            title,
+        )
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+>           raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+E           playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+E           Call log:
+E             - waiting for locator("input[placeholder*='Property']").first
+E               - locator resolved to <input autocomplete="off" value="AM Property" placeholder="Search Property (min 3 chars)" class="flex h-[36px] w-full rounded-lg border border-border bg-card/70 backdrop-blur-sm px-3 py-1 text-[0.8125rem] shadow-xs ring-offset-background file:border-0 file:bg-transparent file:text-[0.8125rem] file:font-medium file:text-foreground placeholder:text-muted-foreground/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:border-primary/50 disabled:cursor-not-allowe…/>
+E             - attempting click action
+E               2 × waiting for element to be visible, enabled and stable
+E                 - element is visible, enabled and stable
+E                 - scrolling into view if needed
+E                 - done scrolling
+E                 - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E               - retrying click action
+E               - waiting 20ms
+E               2 × waiting for element to be visible, enabled and stable
+E                 - element is visible, enabled and stable
+E                 - scrolling into view if needed
+E                 - done scrolling
+E                 - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E               - retrying click action
+E                 - waiting 100ms
+E               56 × waiting for element to be visible, enabled and stable
+E                  - element is visible, enabled and stable
+E                  - scrolling into view if needed
+E                  - done scrolling
+E                  - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E                - retrying click action
+E                  - waiting 500ms
+
+venv/lib/python3.14/site-packages/playwright/_impl/_connection.py:632: TimeoutError
+_____ TestComprehensiveFeatures.test_13_room_details_all_fields[chromium] ______
+
+self = <tests.test_12_comprehensive_all_features.TestComprehensiveFeatures object at 0x73e13dfb1710>
+logged_in_page = <Page url='https://test-warsoft-v4.hummingbirdindia.com/property/tariff'>
+
+    def test_13_room_details_all_fields(self, logged_in_page: Page):
+        """Test all fields in Room Details modal"""
+        print("\n🎯 Test 13: Room Details All Fields")
+    
+>       if self.select_property(logged_in_page):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_12_comprehensive_all_features.py:439: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_12_comprehensive_all_features.py:50: in select_property
+    property_input.click()
+venv/lib/python3.14/site-packages/playwright/sync_api/_generated.py:18032: in click
+    self._sync(
+venv/lib/python3.14/site-packages/playwright/_impl/_locator.py:165: in click
+    return await self._frame._click(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.14/site-packages/playwright/_impl/_frame.py:594: in _click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+venv/lib/python3.14/site-packages/playwright/_impl/_connection.py:76: in send
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <playwright._impl._connection.Connection object at 0x73e13dfd06e0>
+cb = <function Channel.send.<locals>.<lambda> at 0x73e13e191fe0>
+is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -> Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        parsed_st = _attach_api_call_information(
+            getattr(task, "__pw_stack__", None) or _capture_stack_trace(),
+            is_internal,
+            title,
+        )
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+>           raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+E           playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+E           Call log:
+E             - waiting for locator("input[placeholder*='Property']").first
+E               - locator resolved to <input autocomplete="off" value="AM Property" placeholder="Search Property (min 3 chars)" class="flex h-[36px] w-full rounded-lg border border-border bg-card/70 backdrop-blur-sm px-3 py-1 text-[0.8125rem] shadow-xs ring-offset-background file:border-0 file:bg-transparent file:text-[0.8125rem] file:font-medium file:text-foreground placeholder:text-muted-foreground/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:border-primary/50 disabled:cursor-not-allowe…/>
+E             - attempting click action
+E               2 × waiting for element to be visible, enabled and stable
+E                 - element is visible, enabled and stable
+E                 - scrolling into view if needed
+E                 - done scrolling
+E                 - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E               - retrying click action
+E               - waiting 20ms
+E               2 × waiting for element to be visible, enabled and stable
+E                 - element is visible, enabled and stable
+E                 - scrolling into view if needed
+E                 - done scrolling
+E                 - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E               - retrying click action
+E                 - waiting 100ms
+E               56 × waiting for element to be visible, enabled and stable
+E                  - element is visible, enabled and stable
+E                  - scrolling into view if needed
+E                  - done scrolling
+E                  - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E                - retrying click action
+E                  - waiting 500ms
+
+venv/lib/python3.14/site-packages/playwright/_impl/_connection.py:632: TimeoutError
+_______ TestComprehensiveFeatures.test_14_upload_image_feature[chromium] _______
+
+self = <tests.test_12_comprehensive_all_features.TestComprehensiveFeatures object at 0x73e13e13cd50>
+logged_in_page = <Page url='https://test-warsoft-v4.hummingbirdindia.com/property/tariff'>
+
+    def test_14_upload_image_feature(self, logged_in_page: Page):
+        """Test Room Image upload feature"""
+        print("\n🎯 Test 14: Upload Image Feature")
+    
+>       if self.select_property(logged_in_page):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_12_comprehensive_all_features.py:505: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_12_comprehensive_all_features.py:50: in select_property
+    property_input.click()
+venv/lib/python3.14/site-packages/playwright/sync_api/_generated.py:18032: in click
+    self._sync(
+venv/lib/python3.14/site-packages/playwright/_impl/_locator.py:165: in click
+    return await self._frame._click(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.14/site-packages/playwright/_impl/_frame.py:594: in _click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+venv/lib/python3.14/site-packages/playwright/_impl/_connection.py:76: in send
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <playwright._impl._connection.Connection object at 0x73e13dfd06e0>
+cb = <function Channel.send.<locals>.<lambda> at 0x73e13dcbd6f0>
+is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -> Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        parsed_st = _attach_api_call_information(
+            getattr(task, "__pw_stack__", None) or _capture_stack_trace(),
+            is_internal,
+            title,
+        )
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+>           raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+E           playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+E           Call log:
+E             - waiting for locator("input[placeholder*='Property']").first
+E               - locator resolved to <input autocomplete="off" value="AM Property" placeholder="Search Property (min 3 chars)" class="flex h-[36px] w-full rounded-lg border border-border bg-card/70 backdrop-blur-sm px-3 py-1 text-[0.8125rem] shadow-xs ring-offset-background file:border-0 file:bg-transparent file:text-[0.8125rem] file:font-medium file:text-foreground placeholder:text-muted-foreground/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:border-primary/50 disabled:cursor-not-allowe…/>
+E             - attempting click action
+E               2 × waiting for element to be visible, enabled and stable
+E                 - element is visible, enabled and stable
+E                 - scrolling into view if needed
+E                 - done scrolling
+E                 - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E               - retrying click action
+E               - waiting 20ms
+E               2 × waiting for element to be visible, enabled and stable
+E                 - element is visible, enabled and stable
+E                 - scrolling into view if needed
+E                 - done scrolling
+E                 - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E               - retrying click action
+E                 - waiting 100ms
+E               56 × waiting for element to be visible, enabled and stable
+E                  - element is visible, enabled and stable
+E                  - scrolling into view if needed
+E                  - done scrolling
+E                  - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E                - retrying click action
+E                  - waiting 500ms
+
+venv/lib/python3.14/site-packages/playwright/_impl/_connection.py:632: TimeoutError
+_____ TestComprehensiveFeatures.test_15_room_charge_details_save[chromium] _____
+
+self = <tests.test_12_comprehensive_all_features.TestComprehensiveFeatures object at 0x73e13e140890>
+logged_in_page = <Page url='https://test-warsoft-v4.hummingbirdindia.com/property/tariff'>
+
+    def test_15_room_charge_details_save(self, logged_in_page: Page):
+        """Test Room Charge Details and Save functionality"""
+        print("\n🎯 Test 15: Room Charge Details & Save")
+    
+>       if self.select_property(logged_in_page):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_12_comprehensive_all_features.py:538: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_12_comprehensive_all_features.py:50: in select_property
+    property_input.click()
+venv/lib/python3.14/site-packages/playwright/sync_api/_generated.py:18032: in click
+    self._sync(
+venv/lib/python3.14/site-packages/playwright/_impl/_locator.py:165: in click
+    return await self._frame._click(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.14/site-packages/playwright/_impl/_frame.py:594: in _click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+venv/lib/python3.14/site-packages/playwright/_impl/_connection.py:76: in send
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <playwright._impl._connection.Connection object at 0x73e13dfd06e0>
+cb = <function Channel.send.<locals>.<lambda> at 0x73e13dd65170>
+is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -> Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        parsed_st = _attach_api_call_information(
+            getattr(task, "__pw_stack__", None) or _capture_stack_trace(),
+            is_internal,
+            title,
+        )
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+>           raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+E           playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+E           Call log:
+E             - waiting for locator("input[placeholder*='Property']").first
+E               - locator resolved to <input autocomplete="off" value="AM Property" placeholder="Search Property (min 3 chars)" class="flex h-[36px] w-full rounded-lg border border-border bg-card/70 backdrop-blur-sm px-3 py-1 text-[0.8125rem] shadow-xs ring-offset-background file:border-0 file:bg-transparent file:text-[0.8125rem] file:font-medium file:text-foreground placeholder:text-muted-foreground/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:border-primary/50 disabled:cursor-not-allowe…/>
+E             - attempting click action
+E               2 × waiting for element to be visible, enabled and stable
+E                 - element is visible, enabled and stable
+E                 - scrolling into view if needed
+E                 - done scrolling
+E                 - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E               - retrying click action
+E               - waiting 20ms
+E               2 × waiting for element to be visible, enabled and stable
+E                 - element is visible, enabled and stable
+E                 - scrolling into view if needed
+E                 - done scrolling
+E                 - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E               - retrying click action
+E                 - waiting 100ms
+E               56 × waiting for element to be visible, enabled and stable
+E                  - element is visible, enabled and stable
+E                  - scrolling into view if needed
+E                  - done scrolling
+E                  - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E                - retrying click action
+E                  - waiting 500ms
+
+venv/lib/python3.14/site-packages/playwright/_impl/_connection.py:632: TimeoutError
+__ TestComprehensiveFeatures.test_16_complete_create_room_workflow[chromium] ___
+
+self = <tests.test_12_comprehensive_all_features.TestComprehensiveFeatures object at 0x73e13e140a10>
+logged_in_page = <Page url='https://test-warsoft-v4.hummingbirdindia.com/property/tariff'>
+
+    def test_16_complete_create_room_workflow(self, logged_in_page: Page):
+        """Complete Create Room workflow with cursor movement"""
+        print("\n🎯 Test 16: Complete Create Room Workflow")
+    
+>       if self.select_property(logged_in_page):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_12_comprehensive_all_features.py:561: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_12_comprehensive_all_features.py:50: in select_property
+    property_input.click()
+venv/lib/python3.14/site-packages/playwright/sync_api/_generated.py:18032: in click
+    self._sync(
+venv/lib/python3.14/site-packages/playwright/_impl/_locator.py:165: in click
+    return await self._frame._click(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.14/site-packages/playwright/_impl/_frame.py:594: in _click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+venv/lib/python3.14/site-packages/playwright/_impl/_connection.py:76: in send
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <playwright._impl._connection.Connection object at 0x73e13dfd06e0>
+cb = <function Channel.send.<locals>.<lambda> at 0x73e13dd3c510>
+is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -> Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        parsed_st = _attach_api_call_information(
+            getattr(task, "__pw_stack__", None) or _capture_stack_trace(),
+            is_internal,
+            title,
+        )
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+>           raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+E           playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+E           Call log:
+E             - waiting for locator("input[placeholder*='Property']").first
+E               - locator resolved to <input autocomplete="off" value="AM Property" placeholder="Search Property (min 3 chars)" class="flex h-[36px] w-full rounded-lg border border-border bg-card/70 backdrop-blur-sm px-3 py-1 text-[0.8125rem] shadow-xs ring-offset-background file:border-0 file:bg-transparent file:text-[0.8125rem] file:font-medium file:text-foreground placeholder:text-muted-foreground/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:border-primary/50 disabled:cursor-not-allowe…/>
+E             - attempting click action
+E               2 × waiting for element to be visible, enabled and stable
+E                 - element is visible, enabled and stable
+E                 - scrolling into view if needed
+E                 - done scrolling
+E                 - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E               - retrying click action
+E               - waiting 20ms
+E               2 × waiting for element to be visible, enabled and stable
+E                 - element is visible, enabled and stable
+E                 - scrolling into view if needed
+E                 - done scrolling
+E                 - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E               - retrying click action
+E                 - waiting 100ms
+E               56 × waiting for element to be visible, enabled and stable
+E                  - element is visible, enabled and stable
+E                  - scrolling into view if needed
+E                  - done scrolling
+E                  - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+E                - retrying click action
+E                  - waiting 500ms
+
+venv/lib/python3.14/site-packages/playwright/_impl/_connection.py:632: TimeoutError
+- Generated html report: file:///home/selvaganesh/Selva-Backup/Git/Playwright/Tariff_Management/reports/report.html -
+=========================== short test summary info ============================
+FAILED tests/test_12_comprehensive_all_features.py::TestComprehensiveFeatures::test_02_create_new_room_button[chromium] - playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[placeholder*='Property']").first
+    - locator resolved to <input autocomplete="off" value="AM Property" placeholder="Search Property (min 3 chars)" class="flex h-[36px] w-full rounded-lg border border-border bg-card/70 backdrop-blur-sm px-3 py-1 text-[0.8125rem] shadow-xs ring-offset-background file:border-0 file:bg-transparent file:text-[0.8125rem] file:font-medium file:text-foreground placeholder:text-muted-foreground/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:border-primary/50 disabled:cursor-not-allowe…/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    56 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+FAILED tests/test_12_comprehensive_all_features.py::TestComprehensiveFeatures::test_03_history_button_click[chromium] - playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[placeholder*='Property']").first
+    - locator resolved to <input autocomplete="off" value="AM Property" placeholder="Search Property (min 3 chars)" class="flex h-[36px] w-full rounded-lg border border-border bg-card/70 backdrop-blur-sm px-3 py-1 text-[0.8125rem] shadow-xs ring-offset-background file:border-0 file:bg-transparent file:text-[0.8125rem] file:font-medium file:text-foreground placeholder:text-muted-foreground/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:border-primary/50 disabled:cursor-not-allowe…/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    56 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+FAILED tests/test_12_comprehensive_all_features.py::TestComprehensiveFeatures::test_04_history_realtime_data[chromium] - playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[placeholder*='Property']").first
+    - locator resolved to <input autocomplete="off" value="AM Property" placeholder="Search Property (min 3 chars)" class="flex h-[36px] w-full rounded-lg border border-border bg-card/70 backdrop-blur-sm px-3 py-1 text-[0.8125rem] shadow-xs ring-offset-background file:border-0 file:bg-transparent file:text-[0.8125rem] file:font-medium file:text-foreground placeholder:text-muted-foreground/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:border-primary/50 disabled:cursor-not-allowe…/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    56 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+FAILED tests/test_12_comprehensive_all_features.py::TestComprehensiveFeatures::test_05_history_filtration[chromium] - playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[placeholder*='Property']").first
+    - locator resolved to <input autocomplete="off" value="AM Property" placeholder="Search Property (min 3 chars)" class="flex h-[36px] w-full rounded-lg border border-border bg-card/70 backdrop-blur-sm px-3 py-1 text-[0.8125rem] shadow-xs ring-offset-background file:border-0 file:bg-transparent file:text-[0.8125rem] file:font-medium file:text-foreground placeholder:text-muted-foreground/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:border-primary/50 disabled:cursor-not-allowe…/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    56 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+FAILED tests/test_12_comprehensive_all_features.py::TestComprehensiveFeatures::test_06_history_pagination[chromium] - playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[placeholder*='Property']").first
+    - locator resolved to <input autocomplete="off" value="AM Property" placeholder="Search Property (min 3 chars)" class="flex h-[36px] w-full rounded-lg border border-border bg-card/70 backdrop-blur-sm px-3 py-1 text-[0.8125rem] shadow-xs ring-offset-background file:border-0 file:bg-transparent file:text-[0.8125rem] file:font-medium file:text-foreground placeholder:text-muted-foreground/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:border-primary/50 disabled:cursor-not-allowe…/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    56 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+FAILED tests/test_12_comprehensive_all_features.py::TestComprehensiveFeatures::test_07_history_screen_actions[chromium] - playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[placeholder*='Property']").first
+    - locator resolved to <input autocomplete="off" value="AM Property" placeholder="Search Property (min 3 chars)" class="flex h-[36px] w-full rounded-lg border border-border bg-card/70 backdrop-blur-sm px-3 py-1 text-[0.8125rem] shadow-xs ring-offset-background file:border-0 file:bg-transparent file:text-[0.8125rem] file:font-medium file:text-foreground placeholder:text-muted-foreground/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:border-primary/50 disabled:cursor-not-allowe…/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    56 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+FAILED tests/test_12_comprehensive_all_features.py::TestComprehensiveFeatures::test_08_export_option[chromium] - playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[placeholder*='Property']").first
+    - locator resolved to <input autocomplete="off" value="AM Property" placeholder="Search Property (min 3 chars)" class="flex h-[36px] w-full rounded-lg border border-border bg-card/70 backdrop-blur-sm px-3 py-1 text-[0.8125rem] shadow-xs ring-offset-background file:border-0 file:bg-transparent file:text-[0.8125rem] file:font-medium file:text-foreground placeholder:text-muted-foreground/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:border-primary/50 disabled:cursor-not-allowe…/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    56 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+FAILED tests/test_12_comprehensive_all_features.py::TestComprehensiveFeatures::test_09_table_edit_button[chromium] - playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[placeholder*='Property']").first
+    - locator resolved to <input autocomplete="off" value="AM Property" placeholder="Search Property (min 3 chars)" class="flex h-[36px] w-full rounded-lg border border-border bg-card/70 backdrop-blur-sm px-3 py-1 text-[0.8125rem] shadow-xs ring-offset-background file:border-0 file:bg-transparent file:text-[0.8125rem] file:font-medium file:text-foreground placeholder:text-muted-foreground/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:border-primary/50 disabled:cursor-not-allowe…/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    56 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+FAILED tests/test_12_comprehensive_all_features.py::TestComprehensiveFeatures::test_10_edit_room_details_modal[chromium] - playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[placeholder*='Property']").first
+    - locator resolved to <input autocomplete="off" value="AM Property" placeholder="Search Property (min 3 chars)" class="flex h-[36px] w-full rounded-lg border border-border bg-card/70 backdrop-blur-sm px-3 py-1 text-[0.8125rem] shadow-xs ring-offset-background file:border-0 file:bg-transparent file:text-[0.8125rem] file:font-medium file:text-foreground placeholder:text-muted-foreground/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:border-primary/50 disabled:cursor-not-allowe…/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    56 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+FAILED tests/test_12_comprehensive_all_features.py::TestComprehensiveFeatures::test_11_update_room_functionality[chromium] - playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[placeholder*='Property']").first
+    - locator resolved to <input autocomplete="off" value="AM Property" placeholder="Search Property (min 3 chars)" class="flex h-[36px] w-full rounded-lg border border-border bg-card/70 backdrop-blur-sm px-3 py-1 text-[0.8125rem] shadow-xs ring-offset-background file:border-0 file:bg-transparent file:text-[0.8125rem] file:font-medium file:text-foreground placeholder:text-muted-foreground/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:border-primary/50 disabled:cursor-not-allowe…/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    56 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+FAILED tests/test_12_comprehensive_all_features.py::TestComprehensiveFeatures::test_12_table_delete_button[chromium] - playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[placeholder*='Property']").first
+    - locator resolved to <input autocomplete="off" value="AM Property" placeholder="Search Property (min 3 chars)" class="flex h-[36px] w-full rounded-lg border border-border bg-card/70 backdrop-blur-sm px-3 py-1 text-[0.8125rem] shadow-xs ring-offset-background file:border-0 file:bg-transparent file:text-[0.8125rem] file:font-medium file:text-foreground placeholder:text-muted-foreground/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:border-primary/50 disabled:cursor-not-allowe…/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    56 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+FAILED tests/test_12_comprehensive_all_features.py::TestComprehensiveFeatures::test_13_room_details_all_fields[chromium] - playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[placeholder*='Property']").first
+    - locator resolved to <input autocomplete="off" value="AM Property" placeholder="Search Property (min 3 chars)" class="flex h-[36px] w-full rounded-lg border border-border bg-card/70 backdrop-blur-sm px-3 py-1 text-[0.8125rem] shadow-xs ring-offset-background file:border-0 file:bg-transparent file:text-[0.8125rem] file:font-medium file:text-foreground placeholder:text-muted-foreground/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:border-primary/50 disabled:cursor-not-allowe…/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    56 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+FAILED tests/test_12_comprehensive_all_features.py::TestComprehensiveFeatures::test_14_upload_image_feature[chromium] - playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[placeholder*='Property']").first
+    - locator resolved to <input autocomplete="off" value="AM Property" placeholder="Search Property (min 3 chars)" class="flex h-[36px] w-full rounded-lg border border-border bg-card/70 backdrop-blur-sm px-3 py-1 text-[0.8125rem] shadow-xs ring-offset-background file:border-0 file:bg-transparent file:text-[0.8125rem] file:font-medium file:text-foreground placeholder:text-muted-foreground/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:border-primary/50 disabled:cursor-not-allowe…/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    56 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+FAILED tests/test_12_comprehensive_all_features.py::TestComprehensiveFeatures::test_15_room_charge_details_save[chromium] - playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[placeholder*='Property']").first
+    - locator resolved to <input autocomplete="off" value="AM Property" placeholder="Search Property (min 3 chars)" class="flex h-[36px] w-full rounded-lg border border-border bg-card/70 backdrop-blur-sm px-3 py-1 text-[0.8125rem] shadow-xs ring-offset-background file:border-0 file:bg-transparent file:text-[0.8125rem] file:font-medium file:text-foreground placeholder:text-muted-foreground/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:border-primary/50 disabled:cursor-not-allowe…/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    56 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+FAILED tests/test_12_comprehensive_all_features.py::TestComprehensiveFeatures::test_16_complete_create_room_workflow[chromium] - playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[placeholder*='Property']").first
+    - locator resolved to <input autocomplete="off" value="AM Property" placeholder="Search Property (min 3 chars)" class="flex h-[36px] w-full rounded-lg border border-border bg-card/70 backdrop-blur-sm px-3 py-1 text-[0.8125rem] shadow-xs ring-offset-background file:border-0 file:bg-transparent file:text-[0.8125rem] file:font-medium file:text-foreground placeholder:text-muted-foreground/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:border-primary/50 disabled:cursor-not-allowe…/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    56 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+=================== 15 failed, 1 passed in 529.20s (0:08:49) ===================

@@ -1,0 +1,129 @@
+============================= test session starts ==============================
+platform linux -- Python 3.14.4, pytest-9.1.1, pluggy-1.6.0 -- /home/selvaganesh/Selva-Backup/Git/Playwright/Tariff_Management/venv/bin/python3
+cachedir: .pytest_cache
+metadata: {'Python': '3.14.4', 'Platform': 'Linux-7.0.0-34-generic-x86_64-with-glibc2.43', 'Packages': {'pytest': '9.1.1', 'pluggy': '1.6.0'}, 'Plugins': {'playwright': '0.9.0', 'metadata': '3.1.1', 'html': '4.2.0', 'base-url': '2.1.0'}, 'Base URL': ''}
+rootdir: /home/selvaganesh/Selva-Backup/Git/Playwright/Tariff_Management
+configfile: pytest.ini
+plugins: playwright-0.9.0, metadata-3.1.1, html-4.2.0, base-url-2.1.0
+collecting ... collected 12 items
+
+tests/test_07_proper_bug_reproduction.py::TestProperBugReproduction::test_bug_01_proper_add_room_charges_modal[chromium] ✅ Logged in and navigated to Tariff Management page
+✅ Found property input with selector: input[placeholder*='Property']
+✅ Selected: AM Property - Coimbatore
+✅ Property selected and data loaded
+✅ Add button found, clicking...
+✅ Modal is visible
+🔄 Closing modal...
+✅ Modal closed successfully
+PASSED
+🧹 Cleaning up after test_bug_01_proper_add_room_charges_modal...
+
+tests/test_07_proper_bug_reproduction.py::TestProperBugReproduction::test_bug_02_proper_edit_functionality[chromium] ✅ Found property input with selector: input[placeholder*='Property']
+✅ Property selected and data loaded
+✅ Found 7 edit buttons
+✅ Found 11 input fields in edit modal
+🔄 Closing edit modal...
+✅ Modal closed successfully
+PASSED
+🧹 Cleaning up after test_bug_02_proper_edit_functionality...
+
+tests/test_07_proper_bug_reproduction.py::TestProperBugReproduction::test_bug_03_proper_table_filtering[chromium] ✅ Found property input with selector: input[placeholder*='Property']
+✅ Property selected and data loaded
+✅ Rows before filter: 7
+✅ Rows after filter: 1
+✅ Rows after clear: 7
+PASSED
+🧹 Cleaning up after test_bug_03_proper_table_filtering...
+
+tests/test_07_proper_bug_reproduction.py::TestProperBugReproduction::test_bug_04_proper_horizontal_scroll[chromium] ✅ Found property input with selector: input[placeholder*='Property']
+✅ Property selected and data loaded
+✅ Check these screenshots for header overlapping issues
+PASSED
+🧹 Cleaning up after test_bug_04_proper_horizontal_scroll...
+
+tests/test_07_proper_bug_reproduction.py::TestProperBugReproduction::test_bug_05_proper_form_validation[chromium] ✅ Found property input with selector: input[placeholder*='Property']
+✅ Property selected and data loaded
+🔄 Closing validation test modal...
+✅ Modal closed successfully
+PASSED
+🧹 Cleaning up after test_bug_05_proper_form_validation...
+
+tests/test_07_proper_bug_reproduction.py::TestProperBugReproduction::test_bug_06_proper_responsive_mobile[chromium] ✅ Found property input with selector: input[placeholder*='Property']
+✅ Property selected and data loaded
+PASSED
+🧹 Cleaning up after test_bug_06_proper_responsive_mobile...
+
+tests/test_07_proper_bug_reproduction.py::TestProperBugReproduction::test_bug_07_proper_tac_exceptions_tab[chromium] ✅ Found property input with selector: input[placeholder*='Property']
+✅ Property selected and data loaded
+❌ TAC Exceptions tab not found
+PASSED
+🧹 Cleaning up after test_bug_07_proper_tac_exceptions_tab...
+
+tests/test_08_complete_tariff_workflows.py::TestTariffCompleteWorkflows::test_01_verify_all_modal_fields[chromium] ✅ Found property input with selector: input[placeholder*='Property']
+✅ Property selected and data loaded
+✅ Modal opened, checking fields...
+  ❌ Room Type input: NOT FOUND
+  ❌ Single Agree input: NOT FOUND
+  ❌ Double Agree input: NOT FOUND
+  ❌ Triple Agree input: NOT FOUND
+  ❌ Valid Start Date: NOT FOUND
+  ❌ Valid End Date: NOT FOUND
+  ✅ Facility dropdown: Found
+  ✅ Meal Plan dropdown: Found
+  ❌ TAC checkbox: NOT FOUND
+📸 Error screenshot: assets/bugs_annotated/test_01_all_modal_fields_20260929_180642.png
+✅ Modal closed successfully
+
+📊 Field Check Summary:
+  ✅ Found: 2
+  ❌ Missing: 7
+PASSED
+🧹 Cleaning up after test_01_verify_all_modal_fields...
+
+tests/test_08_complete_tariff_workflows.py::TestTariffCompleteWorkflows::test_02_create_new_room_type_happy_path[chromium] ✅ Found property input with selector: input[placeholder*='Property']
+✅ Property selected and data loaded
+📸 Annotated screenshot: assets/bugs_annotated/test_02_step1_before_add_20260929_180702.png
+📸 Annotated screenshot: assets/bugs_annotated/test_02_step2_modal_opened_20260929_180705.png
+📊 Found 0 text inputs in modal
+📸 Annotated screenshot: assets/bugs_annotated/test_02_step7_form_complete_20260929_180705.png
+🔄 Looking for Save button...
+📸 Annotated screenshot: assets/bugs_annotated/test_02_step8_clicking_save_20260929_180705.png
+📸 Error screenshot: assets/bugs_annotated/test_02_step9_save_result_20260929_180708.png
+✅ Modal closed successfully
+📸 Annotated screenshot: assets/bugs_annotated/test_02_step10_after_close_20260929_180718.png
+PASSED
+🧹 Cleaning up after test_02_create_new_room_type_happy_path...
+
+tests/test_08_complete_tariff_workflows.py::TestTariffCompleteWorkflows::test_03_create_room_validation_errors[chromium] ✅ Found property input with selector: input[placeholder*='Property']
+✅ Property selected and data loaded
+📸 Error screenshot: assets/bugs_annotated/test_03_validation_errors_20260929_180735.png
+✅ Found 0 error elements
+✅ Modal closed successfully
+PASSED
+🧹 Cleaning up after test_03_create_room_validation_errors...
+
+tests/test_08_complete_tariff_workflows.py::TestTariffCompleteWorkflows::test_04_update_existing_room_type[chromium] ✅ Found property input with selector: input[placeholder*='Property']
+✅ Property selected and data loaded
+📸 Annotated screenshot: assets/bugs_annotated/test_04_step1_table_loaded_20260929_180756.png
+✅ Found 7 edit buttons
+📸 Annotated screenshot: assets/bugs_annotated/test_04_step2_clicking_edit_20260929_180756.png
+📸 Annotated screenshot: assets/bugs_annotated/test_04_step3_edit_modal_opened_20260929_180759.png
+📊 Found 9 text inputs in edit modal
+📝 Current Single Agree: 1,000
+📸 Annotated screenshot with box: assets/bugs_annotated/test_04_step4_value_updated_20260929_180803.png
+📸 Annotated screenshot: assets/bugs_annotated/test_04_step5_clicking_update_20260929_180804.png
+📸 Error screenshot: assets/bugs_annotated/test_04_step6_update_result_20260929_180807.png
+✅ Modal closed successfully
+PASSED
+🧹 Cleaning up after test_04_update_existing_room_type...
+
+tests/test_08_complete_tariff_workflows.py::TestTariffCompleteWorkflows::test_05_room_charge_details_modal[chromium] ✅ Found property input with selector: input[placeholder*='Property']
+✅ Property selected and data loaded
+⚠️  Room Charge Details button not found
+📸 Error screenshot: assets/bugs_annotated/test_05_button_not_found_20260929_180825.png
+PASSED
+🧹 Cleaning up after test_05_room_charge_details_modal...
+
+
+- Generated html report: file:///home/selvaganesh/Selva-Backup/Git/Playwright/Tariff_Management/reports/report.html -
+======================== 12 passed in 249.81s (0:04:09) ========================

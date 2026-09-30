@@ -1,0 +1,380 @@
+============================= test session starts ==============================
+platform linux -- Python 3.14.4, pytest-9.1.1, pluggy-1.6.0 -- /home/selvaganesh/Selva-Backup/Git/Playwright/Tariff_Management/venv/bin/python3
+cachedir: .pytest_cache
+metadata: {'Python': '3.14.4', 'Platform': 'Linux-7.0.0-34-generic-x86_64-with-glibc2.43', 'Packages': {'pytest': '9.1.1', 'pluggy': '1.6.0'}, 'Plugins': {'playwright': '0.9.0', 'metadata': '3.1.1', 'html': '4.2.0', 'base-url': '2.1.0'}, 'Base URL': ''}
+rootdir: /home/selvaganesh/Selva-Backup/Git/Playwright/Tariff_Management
+configfile: pytest.ini
+plugins: playwright-0.9.0, metadata-3.1.1, html-4.2.0, base-url-2.1.0
+collecting ... collected 41 items
+
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_01_checkbox_not_visible[chromium] ✅ Logged in and navigated to Tariff Management page
+✅ Property selected
+FAILED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_02_filter_initial_space[chromium] ❌ Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[role='option']").first
+
+PASSED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_03_table_header_caps[chromium] ❌ Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[role='option']").first
+
+PASSED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_04_table_heading_mismatch[chromium] ❌ Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[role='option']").first
+
+PASSED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_05_tooltip_missing[chromium] ❌ Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[role='option']").first
+
+PASSED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_06_design_background[chromium] ❌ Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[role='option']").first
+
+PASSED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_07_error_message[chromium] ❌ Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[role='option']").first
+
+PASSED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_08_date_picker_alignment[chromium] ❌ Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[role='option']").first
+
+PASSED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_09_room_image_fit[chromium] ❌ Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[placeholder*='Property']").first
+    - locator resolved to <input autocomplete="off" value="AM Property" placeholder="Search Property (min 3 chars)" class="flex h-[36px] w-full rounded-lg border border-border bg-card/70 backdrop-blur-sm px-3 py-1 text-[0.8125rem] shadow-xs ring-offset-background file:border-0 file:bg-transparent file:text-[0.8125rem] file:font-medium file:text-foreground placeholder:text-muted-foreground/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:border-primary/50 disabled:cursor-not-allowe…/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <h2 id="radix-_r_o_" class="text-[var(--dialog-title-size)] !font-semibold leading-none tracking-tight">History - AM Property - Coimbatore</h2> from <div role="dialog" tabindex="-1" id="radix-_r_n_" data-state="open" aria-labelledby="radix-_r_o_" aria-describedby="radix-_r_p_" class="fixed left-[50%] top-[50%] z-[100] translate-x-[-50%] translate-y-[-50%] gap-4 border p-4 sm:p-6 [&>*]:min-w-0 duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:…>…</div> subtree intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <h2 id="radix-_r_o_" class="text-[var(--dialog-title-size)] !font-semibold leading-none tracking-tight">History - AM Property - Coimbatore</h2> from <div role="dialog" tabindex="-1" id="radix-_r_n_" data-state="open" aria-labelledby="radix-_r_o_" aria-describedby="radix-_r_p_" class="fixed left-[50%] top-[50%] z-[100] translate-x-[-50%] translate-y-[-50%] gap-4 border p-4 sm:p-6 [&>*]:min-w-0 duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:…>…</div> subtree intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    58 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <h2 id="radix-_r_o_" class="text-[var(--dialog-title-size)] !font-semibold leading-none tracking-tight">History - AM Property - Coimbatore</h2> from <div role="dialog" tabindex="-1" id="radix-_r_n_" data-state="open" aria-labelledby="radix-_r_o_" aria-describedby="radix-_r_p_" class="fixed left-[50%] top-[50%] z-[100] translate-x-[-50%] translate-y-[-50%] gap-4 border p-4 sm:p-6 [&>*]:min-w-0 duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:…>…</div> subtree intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+
+PASSED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_10_button_disabled_state[chromium] ❌ Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[placeholder*='Property']").first
+    - locator resolved to <input autocomplete="off" value="AM Property" placeholder="Search Property (min 3 chars)" class="flex h-[36px] w-full rounded-lg border border-border bg-card/70 backdrop-blur-sm px-3 py-1 text-[0.8125rem] shadow-xs ring-offset-background file:border-0 file:bg-transparent file:text-[0.8125rem] file:font-medium file:text-foreground placeholder:text-muted-foreground/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:border-primary/50 disabled:cursor-not-allowe…/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <h2 id="radix-_r_o_" class="text-[var(--dialog-title-size)] !font-semibold leading-none tracking-tight">History - AM Property - Coimbatore</h2> from <div role="dialog" tabindex="-1" id="radix-_r_n_" data-state="open" aria-labelledby="radix-_r_o_" aria-describedby="radix-_r_p_" class="fixed left-[50%] top-[50%] z-[100] translate-x-[-50%] translate-y-[-50%] gap-4 border p-4 sm:p-6 [&>*]:min-w-0 duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:…>…</div> subtree intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <h2 id="radix-_r_o_" class="text-[var(--dialog-title-size)] !font-semibold leading-none tracking-tight">History - AM Property - Coimbatore</h2> from <div role="dialog" tabindex="-1" id="radix-_r_n_" data-state="open" aria-labelledby="radix-_r_o_" aria-describedby="radix-_r_p_" class="fixed left-[50%] top-[50%] z-[100] translate-x-[-50%] translate-y-[-50%] gap-4 border p-4 sm:p-6 [&>*]:min-w-0 duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:…>…</div> subtree intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    12 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <h2 id="radix-_r_o_" class="text-[var(--dialog-title-size)] !font-semibold leading-none tracking-tight">History - AM Property - Coimbatore</h2> from <div role="dialog" tabindex="-1" id="radix-_r_n_" data-state="open" aria-labelledby="radix-_r_o_" aria-describedby="radix-_r_p_" class="fixed left-[50%] top-[50%] z-[100] translate-x-[-50%] translate-y-[-50%] gap-4 border p-4 sm:p-6 [&>*]:min-w-0 duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:…>…</div> subtree intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+    46 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 z-[100] bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+
+PASSED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_11_tariff_formatting[chromium] ❌ Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[role='option']").first
+
+PASSED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_12_to_date_wrong[chromium] ✅ Property selected
+FAILED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_13_tariff_length[chromium] ❌ Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[role='option']").first
+
+PASSED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_14_room_type_duplicate[chromium] ❌ Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[role='option']").first
+
+PASSED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_15_delete_confirmation[chromium] ❌ Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[role='option']").first
+
+PASSED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_16_export_format[chromium] ❌ Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[role='option']").first
+
+PASSED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_17_search_case_sensitive[chromium] ❌ Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[role='option']").first
+
+PASSED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_18_pagination_issue[chromium] ❌ Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[role='option']").first
+
+PASSED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_19_sort_order[chromium] ❌ Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[role='option']").first
+
+PASSED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_20_facility_dropdown[chromium] ❌ Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[role='option']").first
+
+PASSED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_21_meal_plan_save[chromium] ❌ Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[role='option']").first
+
+PASSED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_22_image_upload_size[chromium] ❌ Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[role='option']").first
+
+PASSED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_23_tax_inclusive_lock[chromium] ❌ Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[role='option']").first
+
+PASSED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_24_history_button[chromium] ❌ Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[role='option']").first
+
+PASSED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_25_tac_percentage[chromium] ❌ Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[role='option']").first
+
+PASSED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_26_visible_checkbox[chromium] ❌ Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[role='option']").first
+
+PASSED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_27_conference_flag[chromium] ❌ Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[role='option']").first
+
+PASSED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_28_temp_room[chromium] ❌ Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[role='option']").first
+
+PASSED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_29_date_validation[chromium] ❌ Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[role='option']").first
+
+PASSED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_30_agreement_count[chromium] ❌ Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[role='option']").first
+
+PASSED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_31_responsive_tablet[chromium] ❌ Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[role='option']").first
+
+PASSED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_32_responsive_mobile[chromium] ❌ Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[role='option']").first
+
+PASSED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_33_loading_indicator[chromium] ❌ Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[role='option']").first
+
+PASSED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_34_keyboard_nav[chromium] ❌ Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[role='option']").first
+
+PASSED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_35_focus_indicator[chromium] ❌ Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[role='option']").first
+
+PASSED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_36_error_contrast[chromium] ❌ Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[role='option']").first
+
+PASSED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_37_sticky_header[chromium] ❌ Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[role='option']").first
+
+PASSED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_38_empty_state[chromium] 📸 Screenshot: assets/bugs/bug_38_empty_state_20260929_185103.png
+PASSED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_39_button_spacing[chromium] ❌ Property selection failed: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[role='option']").first
+
+PASSED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_40_dropdown_animation[chromium] 📸 Screenshot: assets/bugs/bug_40_dropdown_animation_20260929_185141.png
+PASSED
+tests/test_11_all_bugs_complete.py::TestAllBugs::test_create_new_room_complete_workflow[chromium] 
+🎯 Starting Create New Room Test
+✅ Property selected
+✅ Step 1: Property selected
+📸 Screenshot: assets/bugs/bug_create_step1_property_selected_20260929_185151.png
+✅ Step 2: Add Room Charges dialog opened
+📸 Screenshot: assets/bugs/bug_create_step2_add_dialog_opened_20260929_185155.png
+✅ Step 3: Room Details dialog opened
+📸 Screenshot: assets/bugs/bug_create_step3_room_details_opened_20260929_185201.png
+✅ Step 4: Room Type filled: 'Automation Test Room'
+📸 Screenshot: assets/bugs/bug_create_step4_room_type_filled_20260929_185205.png
+📸 Screenshot: assets/bugs/bug_create_step5_tariffs_filled_20260929_185205.png
+✅ Step 7: All fields filled, attempting to save...
+✅ Step 7: Save button clicked
+📸 Screenshot: assets/bugs/bug_create_step7_save_clicked_20260929_185209.png
+✅ Step 8: Staging table has 8 rows
+📸 Screenshot: assets/bugs/bug_create_step8_staging_table_20260929_185211.png
+✅ Test Complete: Create New Room workflow finished
+PASSED
+
+=================================== FAILURES ===================================
+____________ TestAllBugs.test_bug_01_checkbox_not_visible[chromium] ____________
+
+self = <tests.test_11_all_bugs_complete.TestAllBugs object at 0x7e0a3f811090>
+logged_in_page = <Page url='https://test-warsoft-v4.hummingbirdindia.com/property/tariff'>
+
+    def test_bug_01_checkbox_not_visible(self, logged_in_page: Page):
+        """Bug 01: Checkbox not visible in modal"""
+        if self.select_property(logged_in_page):
+            # Open Edit modal
+            edit_btn = logged_in_page.locator("button:has-text('Edit')").first
+>           edit_btn.click()
+
+tests/test_11_all_bugs_complete.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.14/site-packages/playwright/sync_api/_generated.py:18032: in click
+    self._sync(
+venv/lib/python3.14/site-packages/playwright/_impl/_locator.py:165: in click
+    return await self._frame._click(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.14/site-packages/playwright/_impl/_frame.py:594: in _click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+venv/lib/python3.14/site-packages/playwright/_impl/_connection.py:76: in send
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <playwright._impl._connection.Connection object at 0x7e0a3f714440>
+cb = <function Channel.send.<locals>.<lambda> at 0x7e0a3f78aa30>
+is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -> Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        parsed_st = _attach_api_call_information(
+            getattr(task, "__pw_stack__", None) or _capture_stack_trace(),
+            is_internal,
+            title,
+        )
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+>           raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+E           playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+E           Call log:
+E             - waiting for locator("button:has-text('Edit')").first
+
+venv/lib/python3.14/site-packages/playwright/_impl/_connection.py:632: TimeoutError
+_______________ TestAllBugs.test_bug_12_to_date_wrong[chromium] ________________
+
+self = <tests.test_11_all_bugs_complete.TestAllBugs object at 0x7e0a3f6c0910>
+logged_in_page = <Page url='https://test-warsoft-v4.hummingbirdindia.com/property/tariff'>
+
+    def test_bug_12_to_date_wrong(self, logged_in_page: Page):
+        """Bug 12: To date calculation wrong"""
+        if self.select_property(logged_in_page):
+            edit_btn = logged_in_page.locator("button:has-text('Edit')").first
+>           edit_btn.click()
+
+tests/test_11_all_bugs_complete.py:177: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.14/site-packages/playwright/sync_api/_generated.py:18032: in click
+    self._sync(
+venv/lib/python3.14/site-packages/playwright/_impl/_locator.py:165: in click
+    return await self._frame._click(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.14/site-packages/playwright/_impl/_frame.py:594: in _click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+venv/lib/python3.14/site-packages/playwright/_impl/_connection.py:76: in send
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <playwright._impl._connection.Connection object at 0x7e0a3f714440>
+cb = <function Channel.send.<locals>.<lambda> at 0x7e0a3f6d5b10>
+is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -> Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        parsed_st = _attach_api_call_information(
+            getattr(task, "__pw_stack__", None) or _capture_stack_trace(),
+            is_internal,
+            title,
+        )
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+>           raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+E           playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+E           Call log:
+E             - waiting for locator("button:has-text('Edit')").first
+
+venv/lib/python3.14/site-packages/playwright/_impl/_connection.py:632: TimeoutError
+- Generated html report: file:///home/selvaganesh/Selva-Backup/Git/Playwright/Tariff_Management/reports/report.html -
+=========================== short test summary info ============================
+FAILED tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_01_checkbox_not_visible[chromium] - playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("button:has-text('Edit')").first
+FAILED tests/test_11_all_bugs_complete.py::TestAllBugs::test_bug_12_to_date_wrong[chromium] - playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("button:has-text('Edit')").first
+================== 2 failed, 39 passed in 1428.45s (0:23:48) ===================

@@ -1,0 +1,57 @@
+============================= test session starts ==============================
+platform linux -- Python 3.14.4, pytest-9.1.1, pluggy-1.6.0 -- /home/selvaganesh/Selva-Backup/Git/Playwright/Tariff_Management/venv/bin/python3
+cachedir: .pytest_cache
+metadata: {'Python': '3.14.4', 'Platform': 'Linux-7.0.0-34-generic-x86_64-with-glibc2.43', 'Packages': {'pytest': '9.1.1', 'pluggy': '1.6.0'}, 'Plugins': {'playwright': '0.9.0', 'metadata': '3.1.1', 'html': '4.2.0', 'base-url': '2.1.0'}, 'Base URL': ''}
+rootdir: /home/selvaganesh/Selva-Backup/Git/Playwright/Tariff_Management
+configfile: pytest.ini
+testpaths: tests
+plugins: playwright-0.9.0, metadata-3.1.1, html-4.2.0, base-url-2.1.0
+collecting ... collected 44 items
+
+tests/test_01_login.py::TestTariffManagementLogin::test_login_page_loads[chromium] PASSED
+tests/test_01_login.py::TestTariffManagementLogin::test_login_with_valid_credentials[chromium] PASSED
+tests/test_02_tariff_management.py::TestTariffManagement::test_01_navigate_to_tariff_page[chromium] PASSED
+tests/test_02_tariff_management.py::TestTariffManagement::test_02_select_property[chromium] PASSED
+tests/test_02_tariff_management.py::TestTariffManagement::test_03_bug_checkbox_not_visible[chromium] PASSED
+tests/test_02_tariff_management.py::TestTariffManagement::test_04_bug_filter_initial_space[chromium] PASSED
+tests/test_02_tariff_management.py::TestTariffManagement::test_05_table_header_case[chromium] PASSED
+tests/test_03_bugs.py::TestTariffManagementBugs::test_06_bug_table_heading_mismatch[chromium] PASSED
+tests/test_03_bugs.py::TestTariffManagementBugs::test_07_bug_tooltip_not_shown[chromium] PASSED
+tests/test_03_bugs.py::TestTariffManagementBugs::test_08_bug_design_issue_background[chromium] PASSED
+tests/test_03_bugs.py::TestTariffManagementBugs::test_09_bug_error_message_content[chromium] PASSED
+tests/test_03_bugs.py::TestTariffManagementBugs::test_10_bug_date_picker_alignment[chromium] PASSED
+tests/test_03_bugs.py::TestTariffManagementBugs::test_11_bug_room_image_not_fit[chromium] PASSED
+tests/test_04_more_bugs.py::TestTariffManagementMoreBugs::test_12_bug_alignment_issue_tariff[chromium] PASSED
+tests/test_04_more_bugs.py::TestTariffManagementMoreBugs::test_13_bug_tooltip_room_charge_table[chromium] PASSED
+tests/test_04_more_bugs.py::TestTariffManagementMoreBugs::test_14_bug_to_date_captured_wrongly[chromium] PASSED
+tests/test_04_more_bugs.py::TestTariffManagementMoreBugs::test_15_bug_tariff_field_length[chromium] PASSED
+tests/test_04_more_bugs.py::TestTariffManagementMoreBugs::test_16_bug_pagination_room_charge[chromium] PASSED
+tests/test_04_more_bugs.py::TestTariffManagementMoreBugs::test_17_bug_tac_percentage_dot[chromium] PASSED
+tests/test_04_more_bugs.py::TestTariffManagementMoreBugs::test_18_bug_date_manually_edit[chromium] PASSED
+tests/test_04_more_bugs.py::TestTariffManagementMoreBugs::test_19_bug_filter_not_cleared[chromium] PASSED
+tests/test_04_more_bugs.py::TestTariffManagementMoreBugs::test_20_bug_design_overlaps[chromium] PASSED
+tests/test_04_more_bugs.py::TestTariffManagementMoreBugs::test_21_bug_firefox_design_issue[chromium] PASSED
+tests/test_04_more_bugs.py::TestTariffManagementMoreBugs::test_22_bug_room_image_text_issue[chromium] PASSED
+tests/test_05_new_bugs.py::TestTariffManagementAdditionalBugs::test_23_property_name_required_validation[chromium] PASSED
+tests/test_05_new_bugs.py::TestTariffManagementAdditionalBugs::test_24_no_records_found_message_styling[chromium] PASSED
+tests/test_05_new_bugs.py::TestTariffManagementAdditionalBugs::test_25_table_column_width_consistency[chromium] PASSED
+tests/test_05_new_bugs.py::TestTariffManagementAdditionalBugs::test_26_history_button_visibility[chromium] PASSED
+tests/test_05_new_bugs.py::TestTariffManagementAdditionalBugs::test_27_filter_search_icon_alignment[chromium] PASSED
+tests/test_05_new_bugs.py::TestTariffManagementAdditionalBugs::test_28_table_horizontal_scroll_indicator[chromium] PASSED
+tests/test_05_new_bugs.py::TestTariffManagementAdditionalBugs::test_29_button_hover_effects[chromium] PASSED
+tests/test_05_new_bugs.py::TestTariffManagementAdditionalBugs::test_30_tac_exceptions_tab_styling[chromium] PASSED
+tests/test_05_new_bugs.py::TestTariffManagementAdditionalBugs::test_31_search_property_placeholder_text[chromium] PASSED
+tests/test_05_new_bugs.py::TestTariffManagementAdditionalBugs::test_32_breadcrumb_navigation[chromium] PASSED
+tests/test_05_new_bugs.py::TestTariffManagementAdditionalBugs::test_33_responsive_design_small_screen[chromium] PASSED
+tests/test_05_new_bugs.py::TestTariffManagementAdditionalBugs::test_34_mobile_responsive_design[chromium] PASSED
+tests/test_05_new_bugs.py::TestTariffManagementAdditionalBugs::test_35_loading_indicator_missing[chromium] PASSED
+tests/test_05_new_bugs.py::TestTariffManagementAdditionalBugs::test_36_keyboard_navigation[chromium] PASSED
+tests/test_05_new_bugs.py::TestTariffManagementAdditionalBugs::test_37_focus_indicator_visibility[chromium] PASSED
+tests/test_05_new_bugs.py::TestTariffManagementAdditionalBugs::test_38_error_message_color_contrast[chromium] PASSED
+tests/test_05_new_bugs.py::TestTariffManagementAdditionalBugs::test_39_table_header_sticky[chromium] PASSED
+tests/test_05_new_bugs.py::TestTariffManagementAdditionalBugs::test_40_empty_state_icon[chromium] PASSED
+tests/test_05_new_bugs.py::TestTariffManagementAdditionalBugs::test_41_action_buttons_spacing[chromium] PASSED
+tests/test_05_new_bugs.py::TestTariffManagementAdditionalBugs::test_42_dropdown_animation_smoothness[chromium] PASSED
+
+- Generated html report: file:///home/selvaganesh/Selva-Backup/Git/Playwright/Tariff_Management/reports/report.html -
+======================== 44 passed in 117.55s (0:01:57) ========================
